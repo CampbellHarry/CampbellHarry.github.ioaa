@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // typing animation script
 var typed = new Typed(".typing-text", {
-    strings: ["a Security Engineer", "cyber-security specialist", "a Web Developer", "an IT student"],
+    strings: ["a Security Engineer", "a cyber-security specialist", "a Web Developer", "an IT student"],
     loop: true,
     typeSpeed: 70,
     backSpeed: 25,
