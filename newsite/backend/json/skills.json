@@ -1,0 +1,43 @@
+[
+    {
+        "name": "Cyber Security",
+        "bar": "98%",
+        "icon": "https://img.icons8.com/material/100/ffffff/cyber-security.png"
+    },
+    {
+        "name": "Networking",
+        "bar": "70%",
+        "icon": "https://img.icons8.com/material/100/ffffff/cloud-access.png"
+    },
+    {
+        "name": "Web Development",
+        "bar": "80%",
+        "icon": "https://img.icons8.com/material/100/ffffff/media-queries.png"
+    },
+    {
+        "name": "Python",
+        "bar": "92%",
+        "icon": "https://img.icons8.com/material/100/ffffff/python.png"
+    },
+    {
+        "name": "JavaScript",
+        "bar": "80%",
+        "icon": "https://img.icons8.com/material/100/ffffff/js.png"
+    },
+    {
+        "name": "Node.js",
+        "bar": "70%",
+        "icon": "https://cdn.discordapp.com/attachments/1126482747146379305/1185556739022663720/image.png?ex=65900ac1&is=657d95c1&hm=9f1b2f50be25c9951a78199e5a763893e949effe0a5dbe26571c69a23a30c3fe&"
+    },
+
+    {
+        "name": "Software Development",
+        "bar": "80%",
+        "icon": "https://img.icons8.com/material/100/ffffff/idea.png"
+    },
+    {
+        "name": "Project Management",
+        "bar": "94%",
+        "icon": "https://img.icons8.com/material/100/ffffff/project-management.png"
+    }
+]
