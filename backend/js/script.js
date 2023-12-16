@@ -109,3 +109,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.querySelector('.hamburger');
     hamburger.addEventListener('click', show);
 });
+
+// typing animation script
+var typed = new Typed(".typing-text", {
+    strings: ["a Security Engineer", "Cyber Security Specialist", "a Web Developer", "a IT student"],
+    loop: true,
+    typeSpeed: 70,
+    backSpeed: 25,
+    backDelay: 500,
+});
+var typed = new Typed(".typing-text1", {
+    strings: ["Harry Campbell"],
+    loop: false,
+    typeSpeed: 200,
+    backSpeed: 25,
+    backDelay: 500,
+    showCursor: false
+});
+// typing animation script

@@ -1221,6 +1221,9 @@ footer{
     .nav2{
         display: block;
     }   
+    .herotext h2{
+        font-size: 2.5rem;
+    }
 }
 @media screen and (max-width: 1000px) {
     .skill{
