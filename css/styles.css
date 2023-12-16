@@ -269,6 +269,55 @@ header{
 .nav ul li a.active::before{
     transform: scaleX(1);
 }
+/* FILEPATH: /c:/Users/htheb/OneDrive/Desktop/Code/newsite/css/styles.css */
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        background-color: var(--white);
+        color: var(--secondary);
+    }
+
+    .nav2 {
+        display: none;
+    }
+
+    .hamburger i {
+        font-size: 1.5rem;
+    }
+
+    .hamburger ul {
+        display: none;
+        position: absolute;
+        top: 79%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .hamburger ul li {
+        margin-bottom: 1rem;
+    }
+
+    .hamburger ul li a {
+        color: var(--secondary);
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+    .hamburger ul li a:hover {
+        color: var(--blue);
+    }
+
+}
+
 section {
     min-height: 100vh;
     padding: 2rem 9%;
@@ -770,11 +819,10 @@ section {
     color: var(--white);
     gap: 5rem;
     flex-wrap: wrap;
-
+    align-items: center;
+    justify-content: center;
 }
 .certification{
-    width: auto;
-    max-width: 400px;
     border: #00aced 2px solid;
     border-radius: 2rem;
     padding: 2rem;
@@ -783,6 +831,16 @@ section {
     flex-wrap: wrap;
     flex-wrap: inherit;
     transition: all 0.2s linear;
+}
+@media screen and (max-width: 1000px) {
+    .certification{
+        width: 80%;
+    }
+    .headcertifications{
+        font-size: 2.5rem !important;
+    
+    }
+    
 }
 .headcertifications h1{
     color: white;
@@ -1158,6 +1216,9 @@ footer{
         display: none;
     }
     .hamburger{
+        display: block;
+    }
+    .nav2{
         display: block;
     }   
 }

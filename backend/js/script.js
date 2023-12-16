@@ -95,3 +95,17 @@ window.addEventListener('scroll', function () {
     }
 });
 
+function show() {
+    let element = document.getElementsByClassName("nav2")[0];
+    if (window.getComputedStyle(element).display === "none") {
+        element.style.display = "block";
+        console.log("loaded");
+    } else {
+        element.style.display = "none";
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.querySelector('.hamburger');
+    hamburger.addEventListener('click', show);
+});
