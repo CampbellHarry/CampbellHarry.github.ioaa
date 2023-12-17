@@ -112,14 +112,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // typing animation script
 var typed = new Typed(".typing-text", {
-    strings: ["a Security Engineer", "Cyber Security Specialist", "a Web Developer", "a IT student"],
+    strings: ["a Security Engineer", "a cyber-security analyst", "a Web Developer", "an IT student"],
     loop: true,
     typeSpeed: 70,
     backSpeed: 25,
     backDelay: 500,
 });
 var typed = new Typed(".typing-text1", {
-    strings: ["Harry Campbell"],
+    strings: ["Harry,"],
     loop: false,
     typeSpeed: 200,
     backSpeed: 25,
