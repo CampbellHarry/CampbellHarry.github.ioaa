@@ -270,7 +270,9 @@ header{
     transform: scaleX(1);
 }
 /* FILEPATH: /c:/Users/htheb/OneDrive/Desktop/Code/newsite/css/styles.css */
-
+.nav2.show {
+    display: block;
+}
 /* Mobile Navigation */
 @media (max-width: 768px) {
     .hamburger {
@@ -518,7 +520,8 @@ section {
     margin: 0 auto;
     padding: 0 1rem;
     color: var(--white);
-    background-image: linear-gradient(90deg, #000dbd, #00aeff);
+    background-image: linear-gradient(200deg, #4b0082, #9400d3, #4b0082);
+
 }
 .aboutcontainer{
     display: flex;
@@ -591,9 +594,30 @@ section {
     font-weight: 800;
     margin-bottom: 1rem;
     color: #00aeff;
-    animation: colorswipe 1s ease-in-out infinite;
+    animation: reveal 1s ease-in-out;
+}
+@keyframes reveal {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    70% {
+        transform: translateY(-10px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translatex(0);
+        opacity: 1;
+    }
 }
 /* About section ends */
+/* scroll animation stuff */
+section.show{
+    opacity: 1;
+}
+section.hidden{
+    opacity: 0;
+}
 /* Skills section begins */
 .skills{
     display: flex;
@@ -618,9 +642,7 @@ section {
     flex-wrap: wrap;
     transition: all 0.2s linear;
 }
-.reveal{
-    animation: reveal 1s ease-in-out;
-}
+
 .skill{
     width: 30rem;
     border: #00aced 2px solid;
@@ -934,33 +956,48 @@ section {
     background-color: var(--primary);
     flex-wrap: wrap;
     flex-wrap: inherit;
+    text-transform: lowercase !important;
 }
 .contactcontainer{
     display: flex;
-    max-width: 1200px;
+    max-width: auto;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
     color: var(--white);
     gap: 5rem;
     flex-wrap: wrap;
     flex-wrap: inherit;
+    align-items: center;
+    justify-content: center;
+    text-transform: lowercase !important;
 }
+
 .contacttext{
     width: 50%;
     gap: 2rem;
     flex-wrap: wrap;
     flex-wrap: inherit;
 }
+.contacttext p{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
 .contacttext h1{
     font-size: 4rem;
     font-weight: 600;
     margin-bottom: 1rem;
 }
-.headcontact h1{
+.headcontact h2{
     font-weight: 800;
     margin-bottom: 1rem;
     text-align: center;
     color: #00aeff;
+    align-items: center;
+    text-align: center;
     animation: colorswipe 1s ease-in-out infinite;
 }
 .headcontact{
@@ -974,6 +1011,21 @@ section {
     font-size: 2rem;
     margin-bottom: 2rem;
     font-weight: 400;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: auto;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    flex-wrap: wrap;
+    flex-wrap: inherit;
+    text-transform: lowercase !important;
 }
 .contactimg{
     width: 50%;
@@ -1028,6 +1080,34 @@ form .submit:hover{
 form .submit:hover i {
     transform: translateX(5px);
   }
+.contactbtn{
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--white);
+    padding: 1rem 2rem;
+    border: 2px solid var(--techblue);
+    border-radius: 2rem;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: all 0.2s linear;
+}
+.contactbtn:hover{
+    background-color: var(--techblue);
+    color: var(--white);
+}
+.contactbtn:hover i {
+    transform: translateX(5px);
+    color: var(--white);
+  }
+i{
+    font-size: 2rem;
+    color: var(--white);
+    margin-left: 2vh;
+    
+}
 /* contact section ends */
 /* projects section begins */
 .projects{
@@ -1229,4 +1309,10 @@ footer{
     .skill{
         width: 100%;
     }
+}
+/* misc */
+.underlinecool{
+    text-decoration: underline;
+    text-decoration-color: var(--techblue);
+    text-decoration-thickness: 5px;
 }

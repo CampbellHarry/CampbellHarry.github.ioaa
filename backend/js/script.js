@@ -95,21 +95,6 @@ window.addEventListener('scroll', function () {
     }
 });
 
-function show() {
-    let element = document.getElementsByClassName("nav2")[0];
-    if (window.getComputedStyle(element).display === "none") {
-        element.style.display = "block";
-        console.log("loaded");
-    } else {
-        element.style.display = "none";
-    }
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.querySelector('.hamburger');
-    hamburger.addEventListener('click', show);
-});
-
 // typing animation script
 var typed = new Typed(".typing-text", {
     strings: ["a Security Engineer", "a cyber-security analyst", "a Web Developer", "an IT student"],
@@ -127,3 +112,30 @@ var typed = new Typed(".typing-text1", {
     showCursor: false
 });
 // typing animation script
+// Get the element to animate
+// Function to check if an element is in the viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Function to handle scroll event
+function handleScroll() {
+    const revealElements = document.querySelectorAll('.hidden');
+    for (let i = 0; i < revealElements.length; i++) {
+        const element = revealElements[i];
+        if (isInViewport(element)) {
+            element.classList.add('show');
+        } else {
+            element.classList.remove('show');
+        }
+    }
+}
+
+// Add scroll event listener
+window.addEventListener('scroll', handleScroll);
