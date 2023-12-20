@@ -285,9 +285,14 @@ header{
     }
 
     .nav2 {
-        display: none;
+        display: block;
     }
-
+    .hamburger{
+        display: flex;
+    }
+    .fa-bars {
+        display: block;
+    }
     .hamburger i {
         font-size: 1.5rem;
     }
@@ -1102,12 +1107,13 @@ form .submit:hover i {
     transform: translateX(5px);
     color: var(--white);
   }
-i{
-    font-size: 2rem;
-    color: var(--white);
-    margin-left: 2vh;
-    
-}
+  .contactbtn i{
+      margin-left: 1rem;
+      color: var(--white);
+  }
+  .fa-lock{
+      color: gold;
+  }
 /* contact section ends */
 /* projects section begins */
 .projects{
@@ -1186,6 +1192,87 @@ i{
 
 
 /* projects section ends */
+/* reviews section begins */
+.reviews{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: auto;
+    margin: 0 auto;
+    padding: 0 1rem;
+    color: var(--white);
+    background-color: #1282b3;
+    flex-wrap: wrap;
+    flex-wrap: inherit;
+}
+.reviewscontainer{
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    color: var(--white);
+    gap: 5rem;
+    flex-wrap: wrap;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+.reviewstext a{
+    font-weight: 600;
+    color: var(--white);
+    transition: all 0.2s linear;
+}
+.reviewstext a:hover{
+    color: var(--techblue);
+}
+.reviewstext{
+    width: auto;
+    max-width: 400px;
+    border: #000000 2px solid;
+    border-radius: 2rem;
+    padding: 2rem;
+    margin: 2rem;
+    flex-wrap: wrap;
+    flex-wrap: inherit;
+    transition: all 0.2s linear;
+}
+.reviewstext:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-5px);
+    border: gold 2px solid;
+    box-shadow: #070707 0px 0px 20px 0px;
+}
+.reviewstext h1{
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.headreviews h1{
+    font-weight: 800;
+    margin-bottom: 1rem;
+    animation: colorswipe 1s ease-in-out infinite;
+}
+.headreviews{
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: gold;
+    animation: colorswipe 1s ease-in-out infinite;
+}
+date{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--white);
+
+}
+.reviewstext p{
+    font-size: 2rem;
+    font-weight: 400;
+}
+
 /* footer section begins */
 footer{
     display: flex;
@@ -1277,11 +1364,20 @@ footer{
     .abouttext{
         width: 100%;
     }
+    .reviewscontainer{
+        flex-direction: column;
+        width: 100%;
+    }
+    .reviewstext{
+        width: 100%;
+        max-width: none;
+    }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 680px) {
     .contactcontainer{
         flex-direction: column;
     }
+
     .contacttext{
         width: 100%;
     }
@@ -1315,4 +1411,97 @@ footer{
     text-decoration: underline;
     text-decoration-color: var(--techblue);
     text-decoration-thickness: 5px;
+}
+.nocap{
+    text-transform: lowercase !important;
+}
+hr{
+    border: 2px solid var(--secondary);
+    border-radius: 2rem;
+    margin: 2rem;
+}
+/* bottom bar for mobile */
+.bottombar{
+    background-color: var(--white);
+    color: var(--secondary);
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    display: none;
+    left: 0;
+    width: 100%;
+    height: 7rem;
+    z-index: 1000;
+    animation: up 1.2s both;
+    transition: transform 0.5s ease-in-out;
+    border-radius: 10px 10px 0px 0px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+.navbar ul{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.navbar ul li{
+    list-style: none;
+    width: 100%;
+    margin-top: 1vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.navbar ul li a{
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--secondary);
+    padding: 0.5rem 0;
+    position: relative;
+}
+.navbar ul li a::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.2s linear;
+}
+.navbar ul li a:hover::before{
+    transform: scaleX(1);
+}
+.navbar ul li a.active::before{
+    transform: scaleX(1);
+}
+@keyframes up {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+@media screen and (max-width: 680px) {
+    .bottombar {
+        display: block;
+        animation: up 1.2s both;
+        transition: transform 0.5s ease-in-out;
+        transform: translateY(-100%);
+    }
+    .bottombar.show {
+        transform: translateY(0%);
+    }
+    header{
+        display: none;
+    }
+    
 }
