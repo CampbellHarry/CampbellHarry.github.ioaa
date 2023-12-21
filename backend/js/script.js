@@ -113,29 +113,73 @@ var typed = new Typed(".typing-text1", {
 });
 // typing animation script
 // Get the element to animate
-// Function to check if an element is in the viewport
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
+// onthe section 
+var section = document.querySelector("section");
+var home = document.querySelector(".home");
+var skills = document.querySelector(".skills");
+var experience = document.querySelector(".experience");
+var certifications = document.querySelector(".certifications");
+var reviews = document.querySelector(".reviews");
+
+// if they are on that section display for bottom menu blue circle
+function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
     return (
         rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight)
     );
 }
 
-// Function to handle scroll event
-function handleScroll() {
-    const revealElements = document.querySelectorAll('.hidden');
-    for (let i = 0; i < revealElements.length; i++) {
-        const element = revealElements[i];
-        if (isInViewport(element)) {
-            element.classList.add('show');
-        } else {
-            element.classList.remove('show');
-        }
+function bluecircle() {
+    if (isElementInViewport(home)) {
+        document.getElementById("home").style.backgroundColor = "#2c3e50";
+    } else {
+        document.getElementById("home").style.backgroundColor = "#1abc9c";
+    }
+    if (isElementInViewport(skills)) {
+        document.getElementById("skills").style.backgroundColor = "#2c3e50";
+    } else {
+        document.getElementById("skills").style.backgroundColor = "#1abc9c";
+    }
+    if (isElementInViewport(experience)) {
+        document.getElementById("experience").style.backgroundColor = "#2c3e50";
+    } else {
+        document.getElementById("experience").style.backgroundColor = "#1abc9c";
+    }
+    if (isElementInViewport(certifications)) {
+        document.getElementById("certifications").style.backgroundColor = "#2c3e50";
+    } else {
+        document.getElementById("certifications").style.backgroundColor = "#1abc9c";
+    }
+    if (isElementInViewport(reviews)) {
+        document.getElementById("reviews").style.backgroundColor = "#2c3e50";
+    } else {
+        document.getElementById("reviews").style.backgroundColor = "#1abc9c";
     }
 }
 
-// Add scroll event listener
-window.addEventListener('scroll', handleScroll);
+window.addEventListener('scroll', bluecircle);
+
+
+// if bottom bar at the very bottom disappear
+var bottombar = document.querySelector(".bottombar");
+
+function bottombarappear() {
+    if (window.matchMedia("(max-width: 680px)").matches) {
+        var scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        if (scrollPercentage >= 99) {
+            bottombar.style.display = "none";
+            bottombar.style.animation = "up 1.2s both";
+            bottombar.style.transition = "transform 0.5s ease-in-out";
+            bottombar.style.transform = "translateY(-100%)";
+        } else {
+            bottombar.style.display = "block";
+        }
+    } else {
+        bottombar.style.display = "none";
+    }
+}
+
+window.addEventListener('scroll', bottombarappear);
+// if bottom bar at the very bottom disappear
