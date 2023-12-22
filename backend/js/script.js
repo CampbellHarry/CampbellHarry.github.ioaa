@@ -56,6 +56,20 @@ function showProjects(projects) {
     });
     projectscontainer.innerHTML = ProjectsHTML;
 }
+function showReviews(reviews) {
+    let reviewscontainer = document.getElementsByClassName("reviewscontainer")[0];
+    let ReviewsHTML = "";
+    reviews.forEach(review => {
+        ReviewsHTML += `
+        <div class="reviewstext">
+            <a href="${review.linkedin}">${review.name}</a>
+            <p title="${review.role}">${review.role}</p>
+            <date>${review.date}</date>
+            <p>${review.review}</p>
+        </div>`;
+    });
+    reviewscontainer.innerHTML = ReviewsHTML;
+}
 document.addEventListener('DOMContentLoaded', async function () {
     const skills = await fetchData("/backend/json/skills.json");
     showSkills(skills);
@@ -65,6 +79,9 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     const projects = await fetchData("/backend/json/projects.json");
     showProjects(projects);
+
+    const reviews = await fetchData("/backend/json/reviews.json");
+    showReviews(reviews);
 });
 
 document.addEventListener('visibilitychange', function () {
