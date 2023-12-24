@@ -1147,7 +1147,7 @@ form .submit:hover i {
     margin: 0 auto;
     padding: 0 1rem;
     color: var(--white);
-    background-color: var(--cyan);
+    background-color: var(--green);
     flex-wrap: wrap;
     flex-wrap: inherit;
 }
