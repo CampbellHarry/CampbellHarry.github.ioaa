@@ -185,7 +185,7 @@ var bottombar = document.querySelector(".bottombar");
 function bottombarappear() {
     if (window.matchMedia("(max-width: 680px)").matches) {
         var scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        if (scrollPercentage >= 99) {
+        if (scrollPercentage >= 95) {
             bottombar.style.display = "none";
             bottombar.style.animation = "up 1.2s both";
             bottombar.style.transition = "transform 0.5s ease-in-out";
