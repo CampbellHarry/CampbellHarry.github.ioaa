@@ -1,0 +1,120 @@
+footer {
+        background-color: white;
+        color: #000000;
+}
+
+.footer-container {
+        display: flex;
+        flex-wrap: wrap; /* allow items to wrap to new line on smaller screens */
+        justify-content: space-between;
+        max-width: 100%;
+        margin: 0 auto;
+        background-color: var(--tursh);
+        border-top: #000000 5px solid;
+        width: 500%;
+        font-size: 16px;
+}
+
+.contactbtnfooter{
+        background-color: #000000;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-left: 100px;
+        float: right;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 10px;
+}
+.contactbtnfooter:hover {
+        background-color: #009292;
+        color: rgb(255, 255, 255);
+        border-radius: 5px;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 10px;
+}
+
+.contactbtnfooter a{
+        color: white !important;
+        text-decoration: none;
+}
+
+.footer-section {
+        flex-basis: 30%;
+        margin: 10px;
+}
+
+.footer-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+}
+
+.footer-section ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+}
+
+.footer-section li {
+        margin-bottom: 10px;
+}
+
+.footer-section a:hover {
+        text-decoration: underline;
+}
+
+.footer-bottom {
+        background-color: #000000;
+        padding: 20px 0;
+        color: white;
+        text-align: center;
+        position: relative;
+}
+
+.footer-bottom p {
+        margin: 0;
+        font-size: 1.2rem;
+}
+.row{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        font-size: 16px;
+}
+/* media queries for smaller screens */
+@media only screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* stack items vertically */
+        width: 100%;
+    }
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 16px;
+        flex-direction: column;
+    }
+    .footer-section {
+        flex-basis: 100%; /* make each section take up full width */
+        text-align: center;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.2rem; /* decrease font size */
+    }
+    
+    .footer-section ul {
+        margin-bottom: 20px; /* add more space between sections */
+    }
+    
+    .footer-bottom p {
+        font-size: 1rem; /* decrease font size */
+    }
+}
