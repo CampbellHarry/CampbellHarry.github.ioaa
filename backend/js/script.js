@@ -160,7 +160,6 @@ window.addEventListener('scroll', bottombarappear);
 document.addEventListener('DOMContentLoaded', function() {
     const containerClasses = [
       'aboutcontainer',
-      'skillscontainer',
       'experiencecontainer',
       'projectscontainer',
       'certificationscontainer',
