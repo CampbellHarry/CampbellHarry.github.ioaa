@@ -1409,7 +1409,9 @@ hr{
     font-size: 1.6rem;
     font-weight: 600;
     color: var(--secondary);
-    padding: 0.5rem 0;
+
+    border-radius: 50%;
+    padding: 0.5rem 1rem;
     position: relative;
 }
 .navbar ul li a::before{
@@ -1424,12 +1426,11 @@ hr{
     transform-origin: left;
     transition: all 0.2s linear;
 }
-.navbar ul li a:hover::before{
-    transform: scaleX(1);
+.navbar ul li a:hover{
+    background-color: var(--techblue);
 }
-.navbar ul li a.active::before{
-    transform: scaleX(1);
-}
+
+
 @keyframes up {
     0% {
         transform: translateY(100%);

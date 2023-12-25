@@ -65,7 +65,7 @@ function showReviews(reviews) {
             <a href="${review.linkedin}">${review.name}</a>
             <p title="${review.role}">${review.role}</p>
             <date>${review.date}</date>
-            <p>${review.review}</p>
+            <p>"${review.review}" - ${review.name}.</p>
         </div>`;
     });
     reviewscontainer.innerHTML = ReviewsHTML;
@@ -200,3 +200,72 @@ function bottombarappear() {
 
 window.addEventListener('scroll', bottombarappear);
 // if bottom bar at the very bottom disappear
+// section that the person is on
+var section = document.querySelector(".hero");
+var home = document.querySelector(".home");
+var skills = document.querySelector(".skills");
+var experience = document.querySelector(".experience");
+var certifications = document.querySelector(".certifications");
+var reviews = document.querySelector(".reviews");
+
+var navbaritemhome = document.getElementById("home")
+var navbaritemskills = document.getElementById("skills")
+var navbaritemexperience = document.getElementById("experience")
+var navbaritemcertifications = document.getElementById("certifications")
+var navbaritemreviews = document.getElementById("reviews")
+
+function sectioninview() {
+    var techblue = "black";
+
+    function isElementInViewport(element) {
+        var rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    function updateNavClass(element, shouldAddClass) {
+        if (shouldAddClass) {
+            element.classList.add(techblue);
+        } else {
+            element.classList.remove(techblue);
+        }
+    }
+    if (isElementInViewport(home)) {
+        updateNavClass(navbaritemhome, true);
+        updateNavClass(navbaritemskills, false);
+        updateNavClass(navbaritemexperience, false);
+        updateNavClass(navbaritemcertifications, false);
+        updateNavClass(navbaritemreviews, false)
+    } else if (isElementInViewport(skills)) {
+        updateNavClass(navbaritemhome, false);
+        updateNavClass(navbaritemskills, true);
+        updateNavClass(navbaritemexperience, false);
+        updateNavClass(navbaritemcertifications, false);
+        updateNavClass(navbaritemreviews, false)
+    } else if (isElementInViewport(experience)) {
+        updateNavClass(navbaritemhome, false);
+        updateNavClass(navbaritemskills, false);
+        updateNavClass(navbaritemexperience, true);
+        updateNavClass(navbaritemcertifications, false);
+        updateNavClass(navbaritemreviews, false);
+    } else if (isElementInViewport(certifications)) {
+        updateNavClass(navbaritemhome, false);
+        updateNavClass(navbaritemskills, false);
+        updateNavClass(navbaritemexperience, false);
+        updateNavClass(navbaritemcertifications, true);
+        updateNavClass(navbaritemreviews, false);
+    } else if (isElementInViewport(reviews)) {
+        updateNavClass(navbaritemhome, false);
+        updateNavClass(navbaritemskills, false);
+        updateNavClass(navbaritemexperience, false);
+        updateNavClass(navbaritemcertifications, false);
+        updateNavClass(navbaritemreviews, true);
+    }
+}
+
+window.addEventListener('scroll', sectioninview);
+// section that the person is on
