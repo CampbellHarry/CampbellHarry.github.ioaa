@@ -130,53 +130,7 @@ var typed = new Typed(".typing-text1", {
 });
 // typing animation script
 // Get the element to animate
-// onthe section 
-var section = document.querySelector("section");
-var home = document.querySelector(".home");
-var skills = document.querySelector(".skills");
-var experience = document.querySelector(".experience");
-var certifications = document.querySelector(".certifications");
-var reviews = document.querySelector(".reviews");
 
-// if they are on that section display for bottom menu blue circle
-function isElementInViewport(el) {
-    var rect = el.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight)
-    );
-}
-
-function bluecircle() {
-    if (isElementInViewport(home)) {
-        document.getElementById("home").style.backgroundColor = "#2c3e50";
-    } else {
-        document.getElementById("home").style.backgroundColor = "#1abc9c";
-    }
-    if (isElementInViewport(skills)) {
-        document.getElementById("skills").style.backgroundColor = "#2c3e50";
-    } else {
-        document.getElementById("skills").style.backgroundColor = "#1abc9c";
-    }
-    if (isElementInViewport(experience)) {
-        document.getElementById("experience").style.backgroundColor = "#2c3e50";
-    } else {
-        document.getElementById("experience").style.backgroundColor = "#1abc9c";
-    }
-    if (isElementInViewport(certifications)) {
-        document.getElementById("certifications").style.backgroundColor = "#2c3e50";
-    } else {
-        document.getElementById("certifications").style.backgroundColor = "#1abc9c";
-    }
-    if (isElementInViewport(reviews)) {
-        document.getElementById("reviews").style.backgroundColor = "#2c3e50";
-    } else {
-        document.getElementById("reviews").style.backgroundColor = "#1abc9c";
-    }
-}
-
-window.addEventListener('scroll', bluecircle);
 
 
 // if bottom bar at the very bottom disappear
@@ -201,71 +155,60 @@ function bottombarappear() {
 window.addEventListener('scroll', bottombarappear);
 // if bottom bar at the very bottom disappear
 // section that the person is on
-var section = document.querySelector(".hero");
-var home = document.querySelector(".home");
-var skills = document.querySelector(".skills");
-var experience = document.querySelector(".experience");
-var certifications = document.querySelector(".certifications");
-var reviews = document.querySelector(".reviews");
 
-var navbaritemhome = document.getElementById("home")
-var navbaritemskills = document.getElementById("skills")
-var navbaritemexperience = document.getElementById("experience")
-var navbaritemcertifications = document.getElementById("certifications")
-var navbaritemreviews = document.getElementById("reviews")
 
-function sectioninview() {
-    var techblue = "black";
-
-    function isElementInViewport(element) {
-        var rect = element.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
+document.addEventListener('DOMContentLoaded', function() {
+    const containerClasses = [
+      'aboutcontainer',
+      'skillscontainer',
+      'experiencecontainer',
+      'projectscontainer',
+      'certificationscontainer',
+      'reviewscontainer',
+      'contactcontainer',
+      'headcontact'
+    ];
+  
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
     }
-
-    function updateNavClass(element, shouldAddClass) {
-        if (shouldAddClass) {
-            element.classList.add(techblue);
-        } else {
-            element.classList.remove(techblue);
-        }
+  
+    function isMobile() {
+      return window.innerWidth <= 680;
     }
-    if (isElementInViewport(home)) {
-        updateNavClass(navbaritemhome, true);
-        updateNavClass(navbaritemskills, false);
-        updateNavClass(navbaritemexperience, false);
-        updateNavClass(navbaritemcertifications, false);
-        updateNavClass(navbaritemreviews, false)
-    } else if (isElementInViewport(skills)) {
-        updateNavClass(navbaritemhome, false);
-        updateNavClass(navbaritemskills, true);
-        updateNavClass(navbaritemexperience, false);
-        updateNavClass(navbaritemcertifications, false);
-        updateNavClass(navbaritemreviews, false)
-    } else if (isElementInViewport(experience)) {
-        updateNavClass(navbaritemhome, false);
-        updateNavClass(navbaritemskills, false);
-        updateNavClass(navbaritemexperience, true);
-        updateNavClass(navbaritemcertifications, false);
-        updateNavClass(navbaritemreviews, false);
-    } else if (isElementInViewport(certifications)) {
-        updateNavClass(navbaritemhome, false);
-        updateNavClass(navbaritemskills, false);
-        updateNavClass(navbaritemexperience, false);
-        updateNavClass(navbaritemcertifications, true);
-        updateNavClass(navbaritemreviews, false);
-    } else if (isElementInViewport(reviews)) {
-        updateNavClass(navbaritemhome, false);
-        updateNavClass(navbaritemskills, false);
-        updateNavClass(navbaritemexperience, false);
-        updateNavClass(navbaritemcertifications, false);
-        updateNavClass(navbaritemreviews, true);
+  
+    function handleScroll() {
+      containerClasses.forEach(containerClass => {
+        const elements = document.getElementsByClassName(containerClass);
+  
+        Array.from(elements).forEach(element => {
+          if (isMobile() || isElementInViewport(element)) {
+            element.classList.add('visible');
+            element.classList.remove('hidden');
+          } else {
+            element.classList.remove('hidden');
+            element.classList.add('hidden');
+          }
+        });
+      });
     }
-}
+  
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('DOMContentLoaded', handleScroll); // Check on initial load
+    window.addEventListener('resize', handleScroll); // Handle resize events
+  });
+console.warn("Made by Harry Campbell"); console.log("https://hdev.uk"); console.log(""); console.log(`
+_____     ____
+/        \\  |  o | 
+|          |/ ___\\| (nom) 
+|_________/     
+|_|_| |_|_|
 
-window.addEventListener('scroll', sectioninview);
-// section that the person is on
+`);
+
