@@ -49,7 +49,7 @@ function showProjects(projects) {
     projects.forEach(project => {
         ProjectsHTML += `
         <div class="projectstext">
-        <a href="${project.projectlink}"><h2>${project.projectname}</h2></a>
+        <a href="${project.projectlink}" target="_blank"><h2>${project.projectname}</h2></a>
         <h3>${project.projectcompany}</h3>
         <p>${project.projectdiscription}</p>
 </div>`;
