@@ -24,6 +24,24 @@ function showSkills(skills) {
     skillscontainer.innerHTML = skillHTML;
 }
 
+function showslidythings(slidythings) {
+    let slidythingscontainer = document.getElementsByClassName("scroll")[0];
+    let slidythingsHTML = "";
+    slidythings.forEach(slidything => {
+        slidythingsHTML += `
+        <div class="scrollcard">
+            <div class="namecard">
+                <h1>${slidything.title}</h1>
+            <div class="discriptioncard">
+                <p>${slidything.description}</p>
+            </div>
+        </div>
+        </div>
+        `;
+});
+    slidythingscontainer.innerHTML = slidythingsHTML;
+}
+
 function showCertifications(certifications) {
     let certificationscontainer = document.getElementsByClassName("certificationscontainer")[0];
     let certificationHTML = "";
@@ -82,6 +100,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     const reviews = await fetchData("/backend/json/reviews.json");
     showReviews(reviews);
+    const slidythings = await fetchData("/backend/json/sliders.json");
+    showslidythings(slidythings);
 });
 
 document.addEventListener('visibilitychange', function () {
@@ -202,6 +222,42 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('DOMContentLoaded', handleScroll); // Check on initial load
     window.addEventListener('resize', handleScroll); // Handle resize events
   });
+// section that the person is on
+// scroller
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollElements = document.querySelectorAll('.scroll');
+
+    let hoverTimeout;
+
+    scrollElements.forEach(element => {
+        element.addEventListener('mouseenter', function () {
+            hoverTimeout = setTimeout(pauseAllCards, 1000);
+        });
+
+        element.addEventListener('mouseleave', function () {
+            clearTimeout(hoverTimeout);
+            setTimeout(resumeAllCards, 500);
+        });
+    });
+
+    function pauseAllCards() {
+        const scrollCards = document.querySelectorAll('.scrollcard');
+        scrollCards.forEach(card => {
+            card.classList.add('paused');
+        });
+    }
+
+    function resumeAllCards() {
+        const scrollCards = document.querySelectorAll('.scrollcard');
+        scrollCards.forEach(card => {
+            card.classList.remove('paused');
+        });
+    }
+});
+// scroller
+
+
+// end of script
 console.warn("Made by Harry Campbell"); console.log("https://hdev.uk"); console.log(""); console.log(`
 _____     ____
 /        \\  |  o | 

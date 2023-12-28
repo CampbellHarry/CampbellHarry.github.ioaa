@@ -226,8 +226,9 @@ header{
     letter-spacing: 2px;
     color: var(--secondary);
 }
-.logo img{
+.logo svg{
     width: 8vh;
+    height: 8vh;
 }
 .logo span{
     color: var(--primary);
@@ -348,13 +349,19 @@ section {
     color: var(--white);
 }
 .herotext{
-    width: 50%;
+    width: 100rem;
 }
 .herotext h1{
     font-size: 4rem;
     font-weight: 600;
     margin-bottom: 1rem;
     animation: herohello 1s ease-in-out;
+}
+.herotext p{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    color: rgba(255,255,255,.6);
 }
 @keyframes colorswipe {
     0% {
@@ -533,6 +540,114 @@ section {
 .heroimg img{
     width: 100%;
 }
+/* Hero section ends */
+/* scroll animation stuff */
+.heroautosidescroll{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: auto;
+    margin: 0 auto;
+    padding: 0 1rem;
+    color: var(--white);
+    width: 1200px;
+
+    flex-wrap: wrap;
+    overflow: hidden;
+    flex-wrap: inherit;
+}
+.scroll{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    max-width: auto;
+    margin: 0 auto;
+    padding: 0 1rem;
+    color: var(--white);
+    width: 100%;
+    height: 45vh;
+    flex-wrap: wrap;
+    flex-wrap: inherit;
+}
+/* About section begins */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: auto;
+    margin: 0 auto;
+    padding: 0 1rem;
+    color: var(--white);
+    background-image: linear-gradient(200deg, #4b0082, #9400d3, #4b0082);
+}
+
+.aboutcontainer {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    color: var(--white);
+}
+
+.abouttext {
+    width: auto;
+}
+
+.abouttext h2 {
+    font-size: 4rem;
+}
+
+/* Name card */
+.scrollcard {
+    width: auto;
+    max-width: 100vh;
+    min-width: 35vh !important;
+    height: 90%;
+    background-color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    animation: moveCard 25s linear infinite;
+}
+
+
+.paused {
+    animation-play-state: paused;
+}
+
+/* Name styling */
+.namecard h1 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Description styling */
+.discriptioncard p {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Rating styling */
+.rating img {
+    width: 54px;
+    margin-top: 10px;
+}
+
+
+    @keyframes moveCard {
+        0% {
+            transform: translateX(400%);
+        }
+
+        100% {
+            transform: translateX(-800%);
+        }
+    }
+
 /* About section begins */
 .about{
     display: flex;
@@ -553,20 +668,22 @@ section {
     color: var(--white);
 }
 .abouttext{
-    width: 50%;
+    width: auto;
 }
-.abouttext h1{
+.abouttext h2{
     font-size: 4rem;
     font-weight: 600;
     margin-bottom: 1rem;
 }
-.headabout{
+.headabout {
     font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 1rem;
     color: #00aeff;
-    animation: colorswipe 1s ease-in-out infinite;
+    top: 0;
+    width: auto;
 }
+
 .abouttext p{
     font-size: 2rem;
     margin-bottom: 2rem;
@@ -1245,6 +1362,15 @@ date{
     }
     .herotext{
         width: 100%;
+        font-size: 1rem;
+    }
+    .herocontainer{
+        flex-direction: row;
+        align-items: left;
+        width: 100%;
+    }
+    .herotext{
+        width: 100%;
     }
     .aboutpic{
         display: none;
@@ -1259,6 +1385,20 @@ date{
     .reviewstext{
         width: 100%;
         max-width: none;
+    }
+}
+@media screen and (min-width: 321) {
+    .herotext h2{
+        font-size: 1rem !important;
+    }
+    .skillscontainer{
+        flex-direction: column;
+        width: 50% !important;
+        padding: 0 0 !important;
+    }
+    .skill{
+        width: 100% !important;
+        margin: 0 0 !important;
     }
 }
 @media screen and (max-width: 680px) {
@@ -1438,3 +1578,10 @@ hr{
 .slideleft{
     animation: slideleft 1s ease-in-out;
 }
+.svgbottom{
+    margin-top: 2rem;
+}
+.svgbottom svg{
+    height: 5rem;
+}
+
