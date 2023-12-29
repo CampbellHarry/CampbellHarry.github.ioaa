@@ -1587,3 +1587,12 @@ hr{
 .svgbottom svg{
     height: 5rem;
 }
+@media screen and (max-width: 680px) {
+    .svgbottom{
+        display: none;
+    }
+    .svgbottom svg{
+        display: none;
+    }
+    
+}
