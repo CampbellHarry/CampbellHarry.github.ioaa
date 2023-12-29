@@ -361,7 +361,7 @@ section {
     animation: herohello 1s ease-in-out;
 }
 .herotext p{
-    font-size: 2rem;
+    font-size: 1.6rem !important;
     margin-bottom: 2rem;
     font-weight: 400;
     color: rgba(255,255,255,.6);
