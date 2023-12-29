@@ -553,7 +553,7 @@ section {
     margin: 0 auto;
     padding: 0 1rem;
     color: var(--white);
-    width: 1200px;
+    width: 100%;
 
     flex-wrap: wrap;
     overflow: hidden;
@@ -643,7 +643,7 @@ section {
 
     @keyframes moveCard {
         0% {
-            transform: translateX(400%);
+            transform: translateX(600%);
         }
 
         100% {
