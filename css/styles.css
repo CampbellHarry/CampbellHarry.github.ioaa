@@ -355,7 +355,7 @@ section {
     width: 100rem;
 }
 .herotext h1{
-    font-size: 4rem;
+    font-size: 2rem;
     font-weight: 600;
     margin-bottom: 1rem;
     animation: herohello 1s ease-in-out;
@@ -520,6 +520,9 @@ section {
     transform: scaleX(0);
     transform-origin: left;
     transition: all 0.2s linear;
+}
+#timeofday{
+    font-size: 2rem;
 }
 .herobtn:hover::before{
     transform: scaleX(1);
@@ -796,9 +799,10 @@ section {
     background-color: rgb(0, 0, 0);
     transform: translateY(-5px);
     box-shadow: #070707 0px 0px 20px 0px;
+    height: calc(2px + 400px);
+    transition: all 2.2s linear;
     .skillicon{
         transform: perspective(1000px) rotateY(30deg);
-
     }
 }
 .skillbar{
