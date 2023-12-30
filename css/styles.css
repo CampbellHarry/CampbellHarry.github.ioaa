@@ -799,8 +799,6 @@ section {
     background-color: rgb(0, 0, 0);
     transform: translateY(-5px);
     box-shadow: #070707 0px 0px 20px 0px;
-    height: calc(2px + 400px);
-    transition: all 2.2s linear;
     .skillicon{
         transform: perspective(1000px) rotateY(30deg);
     }
@@ -1113,6 +1111,7 @@ section {
     flex-wrap: wrap;
     flex-wrap: inherit;
 }
+
 .contacttext p{
     font-size: 2rem;
     margin-bottom: 2rem;
@@ -1130,7 +1129,11 @@ section {
     font-weight: 800;
     margin-bottom: 1rem;
     text-align: center;
-    color: #00aeff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: -webkit-linear-gradient(to right, #6ED2D6, #81BAD2);
+    background-image: linear-gradient(to right, #15e5ec, #a1d2fd);
     align-items: center;
     text-align: center;
     animation: colorswipe 1s ease-in-out infinite;
