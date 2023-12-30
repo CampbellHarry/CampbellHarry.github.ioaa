@@ -140,8 +140,10 @@ var typed = new Typed(".typing-text", {
     backSpeed: 25,
     backDelay: 500,
 });
+
+
 var typed = new Typed(".typing-text1", {
-    strings: ["Harry,"],
+    strings: ["Harry."],
     loop: false,
     typeSpeed: 200,
     backSpeed: 25,
@@ -255,7 +257,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 // scroller
+// time of day
+var span = document.getElementById('timeofday');
+var hour = new Date().getHours();
 
+if (hour < 12) {
+    span.innerHTML = "Good Morning,";
+}
+else if (hour < 17) {
+    span.innerHTML = "Good Afternoon,";
+}
+else {
+    span.innerHTML = "Good Evening,";
+}
+// time of day
 
 // end of script
 console.warn("Made by Harry Campbell"); console.log("https://hdev.uk"); console.log(""); console.log(`
