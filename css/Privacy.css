@@ -90,6 +90,7 @@ h3{
 }
 .googlelink{
     color: #000000;
+    text-transform: lowercase;
 }
 .textp{
     font-size: 1.2rem;
@@ -117,7 +118,7 @@ svg{
 .postedby{
     font-size: 1.2rem;
     font-weight: 600;
-    color: #fff;
+    color: #000000;
     text-align: left;
     margin-bottom: 2rem;
 }
