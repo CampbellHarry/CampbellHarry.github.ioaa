@@ -153,6 +153,7 @@ var typed = new Typed(".typing-text1", {
 // typing animation script
 // Get the element to animate
 
+// check if JS is not turned on by user
 
 
 // if bottom bar at the very bottom disappear
@@ -271,6 +272,74 @@ else {
     span.innerHTML = "Good Evening,";
 }
 // time of day
+// scroll
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll('section');
+    const homebar = document.getElementById('homebar'); // Get the element with id "homebar"
+    const about = document.getElementById('aboutbar');
+    const experience = document.getElementById('experiencebar');
+    const projects = document.getElementById('projectbar');
+    const certifications = document.getElementById('certificationbar');
+    const reviews = document.getElementById('reviewbar');
+    const skills = document.getElementById('skillbar');
+
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver(function (entries, observer) {
+        if (window.innerWidth > 640) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.getAttribute('id');
+                    if (sectionId === 'home') {
+                        homebar.classList.add('active');
+                    } else {
+                        homebar.classList.remove('active');
+                    }
+                    if (sectionId === 'about') {
+                        about.classList.add('active');
+                    } else {
+                        about.classList.remove('active');
+                    }
+                    if (sectionId === 'skills') {
+                        skills.classList.add('active');
+                    } else {
+                        skills.classList.remove('active');
+                    }
+                    if (sectionId === 'experience') {
+                        experience.classList.add('active');
+                    } else {
+                        experience.classList.remove('active');
+                    }
+                    if (sectionId === 'projects') {
+                        projects.classList.add('active');
+                    } else {
+                        projects.classList.remove('active');
+                    }
+                    if (sectionId === 'certifications') {
+                        certifications.classList.add('active');
+                    } else {
+                        certifications.classList.remove('active');
+                    }
+                    if (sectionId === 'reviews') {
+                        reviews.classList.add('active');
+                    } else {
+                        reviews.classList.remove('active');
+                    }
+                }
+            });
+        }
+    }, options);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+
 
 // end of script
 console.warn("Made by Harry Campbell"); console.log("https://hdev.uk"); console.log(""); console.log(`
