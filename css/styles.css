@@ -1006,7 +1006,6 @@ section {
         font-size: 2.5rem !important;
     
     }
-    
 }
 .headcertifications h1{
     color: white;
@@ -1324,6 +1323,7 @@ section {
 }
 .reviewstext a{
     font-weight: 600;
+    font-size: 3.7rem;
     color: var(--white);
     transition: all 0.2s linear;
 }
