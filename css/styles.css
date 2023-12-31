@@ -1020,6 +1020,7 @@ section {
     font-weight: 600;
     color: var(--white);
     transition: all 0.2s linear;
+    font-size: 3rem;
 }
 .certificationname a:hover{
     color: var(--techblue);
