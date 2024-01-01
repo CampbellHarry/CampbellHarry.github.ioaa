@@ -338,6 +338,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// copyrightdate
+
+document.getElementById("copyright").textContent = new Date().getFullYear();
 
 // end of script
 console.warn("Made by Harry Campbell"); console.log("https://hdev.uk"); console.log(""); console.log(`
