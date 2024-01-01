@@ -80,7 +80,7 @@ function showReviews(reviews) {
     reviews.forEach(review => {
         ReviewsHTML += `
         <div class="reviewstext">
-            <a href="${review.linkedin}">${review.name}</a>
+            <a href="${review.linkedin}" class="reviewa">${review.name}</a>
             <p title="${review.role}">${review.role}</p>
             <date>${review.date}</date>
             <p>"${review.review}" - ${review.name}.</p>
@@ -180,51 +180,49 @@ window.addEventListener('scroll', bottombarappear);
 // section that the person is on
 
 
-document.addEventListener('DOMContentLoaded', function() {
+function handleScroll() {
     const containerClasses = [
-      'aboutcontainer',
-      'experiencecontainer',
-      'projectscontainer',
-      'certificationscontainer',
-      'reviewscontainer',
-      'contactcontainer',
-      'headcontact'
+        'aboutcontainer',
+        'experiencecontainer',
+        'projectscontainer',
+        'certificationscontainer',
+        'reviewscontainer',
+        'contactcontainer',
+        'headcontact'
     ];
-  
+
     function isElementInViewport(el) {
-      const rect = el.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
     }
-  
+
     function isMobile() {
-      return window.innerWidth <= 680;
+        return window.innerWidth <= 680;
     }
-  
-    function handleScroll() {
-      containerClasses.forEach(containerClass => {
+
+    containerClasses.forEach(containerClass => {
         const elements = document.getElementsByClassName(containerClass);
-  
+
         Array.from(elements).forEach(element => {
-          if (isMobile() || isElementInViewport(element)) {
-            element.classList.add('visible');
-            element.classList.remove('hidden');
-          } else {
-            element.classList.remove('hidden');
-            element.classList.add('hidden');
-          }
+            if (isMobile() || isElementInViewport(element)) {
+                element.classList.add('visible');
+                element.classList.remove('hidden');
+            } else {
+                element.classList.remove('hidden');
+                element.classList.add('hidden');
+            }
         });
-      });
-    }
-  
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('DOMContentLoaded', handleScroll); // Check on initial load
-    window.addEventListener('resize', handleScroll); // Handle resize events
-  });
+    });
+}
+
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('DOMContentLoaded', handleScroll); // Check on initial load
+window.addEventListener('resize', handleScroll); // Handle resize events
 // section that the person is on
 // scroller
 document.addEventListener("DOMContentLoaded", function () {

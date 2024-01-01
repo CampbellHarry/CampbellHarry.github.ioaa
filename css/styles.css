@@ -978,15 +978,29 @@ section {
 /* certifications section begins */
 .certifications{
     display: flex;
-    justify-content: center;
+    width: auto;
+    margin: 0 auto;
     align-items: center;
+    justify-content: center;
     max-width: auto;
     margin: 0 auto;
     padding: 0 1rem;
     color: var(--white);
     background-image: linear-gradient(20deg, rgba(8, 145, 187, 0.8), rgba(3, 7, 214, 0.8), rgba(0, 174, 255, 0.8));
     flex-wrap: wrap;
-    flex-wrap: inherit;
+    flex-direction: row;
+}
+.certificationscontainer{
+    display: flex;
+    width: auto;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    max-width: auto;
+    margin: 0 auto;
+    padding: 0 1rem;
+    color: var(--white);
+    flex-wrap: wrap;
 }
 .certification{
     border: #00aced 2px solid;
@@ -994,10 +1008,28 @@ section {
     padding: 2rem;
     margin: 2rem;
     background-color: rgba(0, 0, 0, 0.9);
-    flex-wrap: wrap;
     flex-wrap: inherit;
     transition: all 0.2s linear;
+    max-width: 400px;
+    min-width: 400px;
 }
+
+@media screen and (max-width: 774) {
+    .certification{
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+    }
+    .certificationscontainer{
+        flex-direction: column !important;
+    }
+    .headcertifications{
+        font-size: 2.5rem !important;
+    
+    }
+    
+}
+
 @media screen and (max-width: 1000px) {
     .certification{
         width: 80%;
@@ -1025,7 +1057,7 @@ section {
     color: var(--techblue);
 }
 .certificationstext{
-    width: 50%;
+    width: 20%;
     gap: 2rem;
     flex-wrap: wrap;
     flex-wrap: inherit;
