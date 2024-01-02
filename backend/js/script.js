@@ -1,10 +1,19 @@
-async function fetchData(url) {
+/*=============== HDev Group  =============== 
+
+Purpose: Harry Campbell's Portfolio website js code.
+Date: 1/1/2024
+
+Copyright (c) 2024 Hdev.uk
+===============================================*/
+
+async function fetchData(url) { // obtains data from json files
     let response = await fetch(url);
     const data = await response.json();
     return data;
 }
 
-function showSkills(skills) {
+
+function showSkills(skills) { // gets the skills from the json file and displays them on the page
     let skillscontainer = document.getElementsByClassName("skillscontainer")[0];
     let skillHTML = "";
     skills.forEach(skill => {
@@ -23,8 +32,11 @@ function showSkills(skills) {
     });
     skillscontainer.innerHTML = skillHTML;
 }
+//end of skills section json
 
-function showslidythings(slidythings) {
+
+// no longer in function
+/* function showslidythings(slidythings) {
     let slidythingscontainer = document.getElementsByClassName("scroll")[0];
     let slidythingsHTML = "";
     slidythings.forEach(slidything => {
@@ -40,8 +52,9 @@ function showslidythings(slidythings) {
         `;
 });
     slidythingscontainer.innerHTML = slidythingsHTML;
-}
+} */
 
+// shows the certifications on the page
 function showCertifications(certifications) {
     let certificationscontainer = document.getElementsByClassName("certificationscontainer")[0];
     let certificationHTML = "";
@@ -61,6 +74,8 @@ function showCertifications(certifications) {
     });
     certificationscontainer.innerHTML = certificationHTML;
 }
+// end of certifications section json
+// shows the projects on the page
 function showProjects(projects) {
     let projectscontainer = document.getElementsByClassName("projectscontainer")[0];
     let ProjectsHTML = "";
@@ -74,6 +89,8 @@ function showProjects(projects) {
     });
     projectscontainer.innerHTML = ProjectsHTML;
 }
+// end of projects section json
+// shows the reviews on the page
 function showReviews(reviews) {
     let reviewscontainer = document.getElementsByClassName("reviewscontainer")[0];
     let ReviewsHTML = "";
@@ -88,6 +105,9 @@ function showReviews(reviews) {
     });
     reviewscontainer.innerHTML = ReviewsHTML;
 }
+// end of reviews section json
+
+// loads all of the json files onto the page
 document.addEventListener('DOMContentLoaded', async function () {
     const skills = await fetchData("/backend/json/skills.json");
     showSkills(skills);
@@ -100,10 +120,14 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     const reviews = await fetchData("/backend/json/reviews.json");
     showReviews(reviews);
+    /* // not in use
     const slidythings = await fetchData("/backend/json/sliders.json");
     showslidythings(slidythings);
+    */
 });
 
+
+// website head title changer
 document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === "visible") {
         updateTitle("Harry Campbell | Portfolio", "/img/H.png");
@@ -112,6 +136,7 @@ document.addEventListener('visibilitychange', function () {
     }
 });
 
+
 function updateTitle(newTitle, faviconPath) {
     // Fade out effect
     $('title').fadeOut(500, function () {
@@ -119,7 +144,9 @@ function updateTitle(newTitle, faviconPath) {
         $("#favicon").attr("href", faviconPath);
     }).fadeIn(500);
 }
+// website head title changer ends
 
+// reveal animation on assets
 window.addEventListener('scroll', function () {
     const revealElements = document.querySelectorAll('.reveal');
     for (let i = 0; i < revealElements.length; i++) {
@@ -131,6 +158,7 @@ window.addEventListener('scroll', function () {
         }
     }
 });
+// reveal animation on assets ends
 
 // typing animation script
 var typed = new Typed(".typing-text", {
@@ -179,7 +207,7 @@ window.addEventListener('scroll', bottombarappear);
 // if bottom bar at the very bottom disappear
 // section that the person is on
 
-
+// header scroll animation
 function handleScroll() {
     const containerClasses = [
         'aboutcontainer',
@@ -224,7 +252,8 @@ window.addEventListener('scroll', handleScroll);
 window.addEventListener('DOMContentLoaded', handleScroll); // Check on initial load
 window.addEventListener('resize', handleScroll); // Handle resize events
 // section that the person is on
-// scroller
+// header scroll animation ends
+/* // scroller
 document.addEventListener("DOMContentLoaded", function () {
     const scrollElements = document.querySelectorAll('.scroll');
 
@@ -255,6 +284,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+/not in use
+*/
+
 // scroller
 // time of day
 var span = document.getElementById('timeofday');
