@@ -781,11 +781,9 @@ section {
 }
 .skillscontainer{
     display: flex;
-    width: auto;
-    margin: 0 auto;
+    width: 90%;
     align-items: center;
     justify-content: center;
-    padding: 0 1rem;
     color: var(--white);
     border-radius: 2rem;
     box-shadow: #070707 0px 0px 10px 0px;
@@ -1011,7 +1009,6 @@ section {
     flex-wrap: inherit;
     transition: all 0.2s linear;
     max-width: 400px;
-    min-width: 400px;
 }
 
 @media screen and (max-width: 774) {
