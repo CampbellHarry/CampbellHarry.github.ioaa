@@ -107,23 +107,18 @@ function showReviews(reviews) {
 }
 // end of reviews section json
 
+
 // loads all of the json files onto the page
 document.addEventListener('DOMContentLoaded', async function () {
     const skills = await fetchData("/backend/json/skills.json");
     showSkills(skills);
-
     const certifications = await fetchData("/backend/json/certs.json");
     showCertifications(certifications);
-
     const projects = await fetchData("/backend/json/projects.json");
     showProjects(projects);
-
     const reviews = await fetchData("/backend/json/reviews.json");
     showReviews(reviews);
-    /* // not in use
-    const slidythings = await fetchData("/backend/json/sliders.json");
-    showslidythings(slidythings);
-    */
+
 });
 
 
