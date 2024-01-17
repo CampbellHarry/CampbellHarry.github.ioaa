@@ -1,10 +1,19 @@
-async function fetchData(url) {
+/*=============== HDev Group  =============== 
+
+Purpose: Harry Campbell's Portfolio website js code.
+Date: 1/1/2024
+
+Copyright (c) 2024 Hdev.uk
+===============================================*/
+
+async function fetchData(url) { // obtains data from json files
     let response = await fetch(url);
     const data = await response.json();
     return data;
 }
 
-function showSkills(skills) {
+
+function showSkills(skills) { // gets the skills from the json file and displays them on the page
     let skillscontainer = document.getElementsByClassName("skillscontainer")[0];
     let skillHTML = "";
     skills.forEach(skill => {
@@ -23,7 +32,29 @@ function showSkills(skills) {
     });
     skillscontainer.innerHTML = skillHTML;
 }
+//end of skills section json
 
+
+// no longer in function
+/* function showslidythings(slidythings) {
+    let slidythingscontainer = document.getElementsByClassName("scroll")[0];
+    let slidythingsHTML = "";
+    slidythings.forEach(slidything => {
+        slidythingsHTML += `
+        <div class="scrollcard">
+            <div class="namecard">
+                <h1>${slidything.title}</h1>
+            <div class="discriptioncard">
+                <p>${slidything.description}</p>
+            </div>
+        </div>
+        </div>
+        `;
+});
+    slidythingscontainer.innerHTML = slidythingsHTML;
+} */
+
+// shows the certifications on the page
 function showCertifications(certifications) {
     let certificationscontainer = document.getElementsByClassName("certificationscontainer")[0];
     let certificationHTML = "";
@@ -43,46 +74,69 @@ function showCertifications(certifications) {
     });
     certificationscontainer.innerHTML = certificationHTML;
 }
+// end of certifications section json
+// shows the projects on the page
 function showProjects(projects) {
     let projectscontainer = document.getElementsByClassName("projectscontainer")[0];
     let ProjectsHTML = "";
     projects.forEach(project => {
         ProjectsHTML += `
         <div class="projectstext">
-        <a href="${project.projectlink}"><h2>${project.projectname}</h2></a>
+        <a href="${project.projectlink}" target="_blank"><h2>${project.projectname}</h2></a>
         <h3>${project.projectcompany}</h3>
         <p>${project.projectdiscription}</p>
 </div>`;
     });
     projectscontainer.innerHTML = ProjectsHTML;
 }
-
-function showreviews(reviews){
+// end of projects section json
+// shows the reviews on the page
+function showReviews(reviews) {
     let reviewscontainer = document.getElementsByClassName("reviewscontainer")[0];
-    let reviewsHTML = "";
+    let ReviewsHTML = "";
     reviews.forEach(review => {
-        reviewsHTML += `
+        ReviewsHTML += `
         <div class="reviewstext">
-        <a href="${review.linkedin}"><h2>${review.name}</h2></a>
-        <p title="${review.role}"></p>
-        <date>${review.date}</date>
-        <p>${review.review} - ${review.name}</p>
-</div>`;
+            <a href="${review.linkedin}" class="reviewa">${review.name}</a>
+            <p title="${review.role}">${review.role}</p>
+            <date>${review.date}</date>
+            <p>"${review.review}" - ${review.name}.</p>
+        </div>`;
     });
-    reviewscontainer.innerHTML = reviewsHTML;
+    reviewscontainer.innerHTML = ReviewsHTML;
+}
+// end of reviews section json
+function showblogs(blog) {
+    let bloghalf = document.getElementsByClassName("bloghalf")[0];
+    let BlogsHTML = "";
+    blog.forEach(blogs => {
+        BlogsHTML += `
+        <div class="blog">
+            <div class="blogtext">
+                <h2>${blogs.blogname}</h2>
+                <p>${blogs.blogtext.substring(0, 40)}...</p>
+            </div>
+        </div>`;
+    });
+    bloghalf.innerHTML = BlogsHTML;
 }
 
+// loads all of the json files onto the page
 document.addEventListener('DOMContentLoaded', async function () {
     const skills = await fetchData("/backend/json/skills.json");
     showSkills(skills);
-
     const certifications = await fetchData("/backend/json/certs.json");
     showCertifications(certifications);
-
     const projects = await fetchData("/backend/json/projects.json");
     showProjects(projects);
+    const reviews = await fetchData("/backend/json/reviews.json");
+    showReviews(reviews);
+    const blog = await fetchData("/backend/json/blog.json");
+    showblogs(blog);
 });
 
+
+// website head title changer
 document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === "visible") {
         updateTitle("Harry Campbell | Portfolio", "/img/H.png");
@@ -91,6 +145,7 @@ document.addEventListener('visibilitychange', function () {
     }
 });
 
+
 function updateTitle(newTitle, faviconPath) {
     // Fade out effect
     $('title').fadeOut(500, function () {
@@ -98,7 +153,9 @@ function updateTitle(newTitle, faviconPath) {
         $("#favicon").attr("href", faviconPath);
     }).fadeIn(500);
 }
+// website head title changer ends
 
+// reveal animation on assets
 window.addEventListener('scroll', function () {
     const revealElements = document.querySelectorAll('.reveal');
     for (let i = 0; i < revealElements.length; i++) {
@@ -110,21 +167,7 @@ window.addEventListener('scroll', function () {
         }
     }
 });
-
-function show() {
-    let element = document.getElementsByClassName("nav2")[0];
-    if (window.getComputedStyle(element).display === "none") {
-        element.style.display = "block";
-        console.log("loaded");
-    } else {
-        element.style.display = "none";
-    }
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.querySelector('.hamburger');
-    hamburger.addEventListener('click', show);
-});
+// reveal animation on assets ends
 
 // typing animation script
 var typed = new Typed(".typing-text", {
@@ -134,8 +177,10 @@ var typed = new Typed(".typing-text", {
     backSpeed: 25,
     backDelay: 500,
 });
+
+
 var typed = new Typed(".typing-text1", {
-    strings: ["Harry,"],
+    strings: ["Harry."],
     loop: false,
     typeSpeed: 200,
     backSpeed: 25,
@@ -143,3 +188,208 @@ var typed = new Typed(".typing-text1", {
     showCursor: false
 });
 // typing animation script
+// Get the element to animate
+
+// check if JS is not turned on by user
+
+
+// if bottom bar at the very bottom disappear
+var bottombar = document.querySelector(".bottombar");
+
+function bottombarappear() {
+    if (window.matchMedia("(max-width: 680px)").matches) {
+        var scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        if (scrollPercentage >= 95) {
+            bottombar.style.display = "none";
+            bottombar.style.animation = "up 1.2s both";
+            bottombar.style.transition = "transform 0.5s ease-in-out";
+            bottombar.style.transform = "translateY(-100%)";
+        } else {
+            bottombar.style.display = "block";
+        }
+    } else {
+        bottombar.style.display = "none";
+    }
+}
+
+window.addEventListener('scroll', bottombarappear);
+// if bottom bar at the very bottom disappear
+// section that the person is on
+
+// header scroll animation
+function handleScroll() {
+    const containerClasses = [
+        'aboutcontainer',
+        'experiencecontainer',
+        'projectscontainer',
+        'certificationscontainer',
+        'reviewscontainer',
+        'contactcontainer',
+        'headcontact'
+    ];
+
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    function isMobile() {
+        return window.innerWidth <= 680;
+    }
+
+    containerClasses.forEach(containerClass => {
+        const elements = document.getElementsByClassName(containerClass);
+
+        Array.from(elements).forEach(element => {
+            if (isMobile() || isElementInViewport(element)) {
+                element.classList.add('visible');
+                element.classList.remove('hidden');
+            } else {
+                element.classList.remove('hidden');
+                element.classList.add('hidden');
+            }
+        });
+    });
+}
+
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('DOMContentLoaded', handleScroll); // Check on initial load
+window.addEventListener('resize', handleScroll); // Handle resize events
+// section that the person is on
+// header scroll animation ends
+/* // scroller
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollElements = document.querySelectorAll('.scroll');
+
+    let hoverTimeout;
+
+    scrollElements.forEach(element => {
+        element.addEventListener('mouseenter', function () {
+            hoverTimeout = setTimeout(pauseAllCards, 1000);
+        });
+
+        element.addEventListener('mouseleave', function () {
+            clearTimeout(hoverTimeout);
+            setTimeout(resumeAllCards, 500);
+        });
+    });
+
+    function pauseAllCards() {
+        const scrollCards = document.querySelectorAll('.scrollcard');
+        scrollCards.forEach(card => {
+            card.classList.add('paused');
+        });
+    }
+
+    function resumeAllCards() {
+        const scrollCards = document.querySelectorAll('.scrollcard');
+        scrollCards.forEach(card => {
+            card.classList.remove('paused');
+        });
+    }
+});
+/not in use
+*/
+
+// scroller
+// time of day
+var span = document.getElementById('timeofday');
+var hour = new Date().getHours();
+
+if (hour < 12) {
+    span.innerHTML = "Good Morning,";
+}
+else if (hour < 17) {
+    span.innerHTML = "Good Afternoon,";
+}
+else {
+    span.innerHTML = "Good Evening,";
+}
+// time of day
+// scroll
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll('section');
+    const homebar = document.getElementById('homebar'); // Get the element with id "homebar"
+    const about = document.getElementById('aboutbar');
+    const experience = document.getElementById('experiencebar');
+    const projects = document.getElementById('projectbar');
+    const certifications = document.getElementById('certificationbar');
+    const reviews = document.getElementById('reviewbar');
+    const skills = document.getElementById('skillbar');
+
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver(function (entries, observer) {
+        if (window.innerWidth > 640) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.getAttribute('id');
+                    if (sectionId === 'home') {
+                        homebar.classList.add('active');
+                    } else {
+                        homebar.classList.remove('active');
+                    }
+                    if (sectionId === 'about') {
+                        about.classList.add('active');
+                    } else {
+                        about.classList.remove('active');
+                    }
+                    if (sectionId === 'skills') {
+                        skills.classList.add('active');
+                    } else {
+                        skills.classList.remove('active');
+                    }
+                    if (sectionId === 'experience') {
+                        experience.classList.add('active');
+                    } else {
+                        experience.classList.remove('active');
+                    }
+                    if (sectionId === 'projects') {
+                        projects.classList.add('active');
+                    } else {
+                        projects.classList.remove('active');
+                    }
+                    if (sectionId === 'certifications') {
+                        certifications.classList.add('active');
+                    } else {
+                        certifications.classList.remove('active');
+                    }
+                    if (sectionId === 'reviews') {
+                        reviews.classList.add('active');
+                    } else {
+                        reviews.classList.remove('active');
+                    }
+                }
+            });
+        }
+    }, options);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+
+// copyrightdate
+
+document.getElementById("copyright").textContent = new Date().getFullYear();
+
+// end of script
+console.warn("Made by Harry Campbell"); console.log("https://hdev.uk"); console.log(""); console.log(`
+_____     ____
+/        \\  |  o | 
+|          |/ ___\\| (nom) 
+|_________/     
+|_|_| |_|_|
+
+`);
+

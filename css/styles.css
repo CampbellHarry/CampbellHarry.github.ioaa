@@ -607,11 +607,63 @@ section {
 }
 
 .abouttext {
-    width: auto;
+    width: 90% !important;
 }
 
 .abouttext h2 {
     font-size: 4rem;
+}
+
+.bloghalf{
+    width: 30%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 47vh;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0rem;
+}
+
+.blogtext p{
+    font-size: 2rem;
+}
+
+.blog{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: auto;
+    margin: 0 auto;
+    width: 90%;
+    color: var(--white);
+    margin-top: 0.2rem;
+    padding-bottom: 1rem;
+    border-bottom: #000 solid 2px;
+}
+.blog h2:hover{
+    color: var(--blue);
+    cursor: pointer
+}
+
+
+@media screen and (max-width: 774px) {
+    .bloghalf{
+        width: 100%;
+        text-align: center;
+    }
+    .abouttext{
+        width: 100% !important;
+    }
+    .aboutcontainer{
+        flex-direction: column !important;
+    }
+    .headabout{
+        font-size: 2.5rem !important;
+    
+    }
+    
 }
 
 /* Name card */
@@ -1256,7 +1308,7 @@ section {
     margin: 0 auto;
     padding: 0 1rem;
     color: var(--white);
-    background-color: var(--green);
+    background-image: linear-gradient(90deg, #2300bd, #7700ff);
     flex-wrap: wrap;
     flex-wrap: inherit;
 }
@@ -1292,6 +1344,22 @@ section {
     flex-wrap: inherit;
     transition: all 0.2s linear;
 }
+@media screen and (max-width: 774px) {
+    .projectstext{
+        width: 100% !important;
+        max-width: none !important;
+        min-width: none !important;
+    }
+    .projectscontainer{
+        flex-direction: column !important;
+    }
+    .headprojects{
+        font-size: 2.5rem !important;
+    
+    }
+    
+}
+
 .projectstext:hover{
     background-color: rgba(0, 0, 0, 0.8);
     transform: translateY(-5px);
@@ -1602,7 +1670,7 @@ hr{
 }
 
 .hidden {
-    opacity: 1;
+    opacity: 0;
   }
 
   .visible {
