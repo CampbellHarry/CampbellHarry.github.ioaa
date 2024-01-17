@@ -5,6 +5,11 @@
         "icon": "https://img.icons8.com/material/100/ffffff/cyber-security.png"
     },
     {
+        "name": "IT Support",
+        "bar": "70%",
+        "icon": "https://img.icons8.com/material/100/ffffff/customer-support.png"
+    },
+    {
         "name": "Networking",
         "bar": "70%",
         "icon": "https://img.icons8.com/material/100/ffffff/cloud-access.png"
