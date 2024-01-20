@@ -204,7 +204,7 @@ html::-webkit-scrollbar-thumb {
   background: #017771;
 }
 header{
-    background-color: var(--white);
+    background-color: white;
     color: var(--secondary);
     padding: 1rem 0;
     position: fixed;
@@ -255,10 +255,13 @@ header{
     padding: 0.5rem 0;
     position: relative;
 }
+.headera{
+    color: rgb(0, 0, 0);
+}
 a{
     font-size: 1.2rem;
     font-weight: 600;
-    color: #ffffff;
+    color: white;
     text-align: left;
     margin-bottom: 2rem;
     text-decoration: none;
