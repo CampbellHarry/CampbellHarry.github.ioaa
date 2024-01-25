@@ -330,10 +330,10 @@ document.addEventListener("DOMContentLoaded", function () {
 var span = document.getElementById('timeofday');
 var hour = new Date().getHours();
 
-if (hour < 12) {
+if (hour >= 5 && hour < 12) {
     span.innerHTML = "Good Morning,";
 }
-else if (hour < 17) {
+else if (hour >= 12 && hour < 19) {
     span.innerHTML = "Good Afternoon,";
 }
 else {
