@@ -147,6 +147,34 @@ body {
     color: #fff;
 }
 
+section{
+    margin: rem 6rem !important;
+    animation: slideInFromTopLeft 1s ease;
+  }
+  header{
+      animation: slideInFromTop 1.4s ease;
+  }
+  @keyframes slideInFromTop {
+      from {
+          transform: translate(0, -100%);
+          opacity: 0;
+      }
+      to {
+          transform: translate(0, 0);
+          opacity: 1;
+      }
+  }
+  @keyframes slideInFromTopLeft {
+      from {
+          transform: translate(+10%, -10%);
+          opacity: 0;
+      }
+      to {
+          transform: translate(0, 0);
+          opacity: 1;
+      }
+  }
+
 @keyframes movearrow {
     0% {
         transform: translateX(0);
