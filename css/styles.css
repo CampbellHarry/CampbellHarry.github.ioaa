@@ -146,11 +146,6 @@ body {
     background: #2b3dda;
     color: #fff;
 }
-
-section{
-    margin: rem 6rem !important;
-    animation: slideInFromTopLeft 1s ease;
-  }
   header{
       animation: slideInFromTop 1.4s ease;
   }
@@ -249,7 +244,30 @@ header{
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+    backdrop-filter: blur(5px);
 }
+    .logo{
+        width: 10rem;
+        max-width: 5px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--secondary);
+    }
+    .logo svg{
+        width: 8vh;
+        height: 8vh;
+    }
+    .logo span{
+        color: var(--primary);
+    }
+    .nav{
+        display: flex;
+        align-items: center;
+    }
+    .nav ul{
+        display: flex;
+        align-items: center;
+    }
 .logo{
     width: 10rem;
     max-width: 5px;
@@ -626,7 +644,7 @@ section {
     margin: 0 auto;
     padding: 0 1rem;
     color: var(--white);
-    background-image: linear-gradient(200deg, #4b0082, #9400d3, #4b0082);
+    background-image: linear-gradient(200deg, #00a841, #034c70, #00458f) !important;
 }
 
 .aboutcontainer {
@@ -781,6 +799,7 @@ section {
     margin-bottom: 1rem;
     color: #00aeff;
     top: 0;
+    width: 100%;
     width: auto;
 }
 
@@ -923,6 +942,7 @@ section {
     font-weight: 800;
     margin-bottom: 1rem;
     align-items: center;
+    justify-content: center;
     text-align: center;
     color: #00aeff;
     animation: colorswipe 1s ease-in-out infinite;
@@ -1094,7 +1114,7 @@ section {
     max-width: 400px;
 }
 
-@media screen and (max-width: 774) {
+@media screen and (max-width: 774px) {
     .certification{
         width: 100% !important;
         max-width: 100% !important;
@@ -1745,4 +1765,160 @@ hr{
 .active{
     color: var(--techblue) !important;
     text-transform: capitalize !important;
+}
+.blueishtag{
+    background-color: #00aeff4b;
+    color: #00aeff;
+    display: flex;
+    align-items: center;
+    border-radius: 3rem;
+    width: 23rem;
+    margin-right: 1rem;
+}
+.blueishtag svg{
+    width: 10rem;
+    top: 0 !important;
+}
+.flexaboutheader{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: auto;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+.flexaboutheader h1{
+    text-transform: none !important;
+    color: white;
+}
+.purpleishtag{
+    background-color: #a200ff4b;
+    color: #00f7ff !important;
+    display: flex;
+    align-items: center;
+    border-radius: 3rem;
+    width: 26rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    margin-left: 1rem;
+}
+.purpleishtag svg{
+    width: 10rem;
+    top: 0 !important;
+}
+.greenishtag{
+    background-color: #0097585d;
+    color: #0051ff !important;
+    display: flex;
+    align-items: center;
+    border-radius: 3rem;
+    width: 43rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    margin-right: 1rem;
+}
+.greenishtag h1{
+    color: #09c6ff !important;
+    letter-spacing: 0.1rem;
+}
+.greenishtag svg{
+    width: 10rem;
+    top: 0 !important;
+}
+.projectstag{
+    background-color: #1fad7e8c;
+    color: #23ffb6;
+    display: flex;
+    align-items: center;
+    border-radius: 3rem;
+    width: 34rem;
+    margin-right: 1rem;
+}
+.projectstag svg{
+    width: 10rem;
+    top: 0 !important;
+}
+.projectstag h1{
+    color: #ffffff !important;
+    letter-spacing: 0.1rem;
+    font-size: 5rem;
+    margin-left: 2rem;
+}
+.flexaboutheader{
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+.flexaboutheader h1{
+    text-transform: none !important;
+    color: white;
+}
+.certstag{
+    background-color: #00aeff4b;
+    color: #00aeff;
+    display: flex;
+    align-items: center;
+    border-radius: 3rem;
+    padding: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+
+}
+@media screen and (max-width: 450px) {
+    .headabout{
+        text-align: center;
+    }
+    .skillscontainer{
+        flex-direction: column;
+        width: 100% !important;
+        gap: 2rem;
+        padding: 0 0 !important;
+    }
+    .skill{
+        width: auto !important;
+        margin: 0 0 !important;
+    }
+    .blueishtag{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .flexaboutheader{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+    }
+    .blueishtag h1{
+        text-align: center;
+        font-size: 2rem;
+    }
+    .purpleishtag{
+        width: 100%;
+        margin-left: 0rem !important;
+        display: flex;
+        justify-content: center;
+    }
+    .greenishtag{
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+        margin-right: 0rem !important;
+        margin-left: 0rem !important;
+    }
+    .greenishtag h1{
+        text-align: center;
+        font-size: 2.8rem;
+    }
+    .projectstag{
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+        margin-right: 0rem !important;
+        margin-left: 0.2rem !important;
+    }
+    .projectstag h1{
+        font-size: 4rem;
+        margin-left: 0rem;
+    }
 }
