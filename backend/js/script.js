@@ -128,8 +128,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     const certifications = await fetchData("/backend/json/certs.json");
     showCertifications(certifications);
     const projects = await fetchData("/backend/json/projects.json");
-    showProjects(projects);
-    const reviews = await fetchData("/backend/json/reviews.json");
     showReviews(reviews);
     const blog = await fetchData("/backend/json/blog.json");
     showblogs(blog);

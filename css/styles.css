@@ -1355,45 +1355,52 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: auto;
     margin: 0 auto;
+    width: auto;
     padding: 0 1rem;
     color: var(--white);
     background-image: linear-gradient(90deg, #2300bd, #7700ff);
     flex-wrap: wrap;
     flex-wrap: inherit;
 }
+.projectimage img{
+    height: 20rem;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: #070707 0px 0px 10px 0px;
+    transition: all 0.2s linear;
+}
 .projectscontainer{
     display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    color: var(--white);
-    gap: 5rem;
-    flex-wrap: wrap;
-    flex-wrap: inherit;
+    width: 100%;
+    display: flex;
+    margin-bottom: 2rem;
     align-items: center;
     justify-content: center;
-    text-align: left;
-}
-.projectstext a{
-    font-weight: 600;
-    color: var(--white);
-    transition: all 0.2s linear;
-}
-.projectstext a:hover{
-    color: var(--techblue);
-}
-.projectstext{
-    width: auto;
-    max-width: 400px;
-    border: #000000 2px solid;
-    border-radius: 2rem;
-    padding: 2rem;
-    margin: 2rem;
+    gap: 20rem;
+    margin: 0 auto;
+    width: 100%;
+    padding: 1rem;
     flex-wrap: wrap;
     flex-wrap: inherit;
-    transition: all 0.2s linear;
+}
+.projectimage img:hover{
+    animation: bobupdown 2s ease-in-out infinite alternate;
+    box-shadow: #070707 0px 0px 20px 0px;
+}
+.projectimage{
+    animation: ease-in-out 1s;
+}
+@keyframes bobupdown{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0);
+    }
 }
 @media screen and (max-width: 774px) {
     .projectstext{
@@ -1410,16 +1417,14 @@ section {
     }
     
 }
-
-.projectstext:hover{
-    background-color: rgba(0, 0, 0, 0.8);
-    transform: translateY(-5px);
-    box-shadow: #070707 0px 0px 20px 0px;
-}
-.projectstext h1{
-    font-size: 4rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+.projectstext{
+    width: 60%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex-wrap: wrap;
+    flex-wrap: inherit;
 }
 .headprojects h1{
     font-weight: 800;
@@ -1430,18 +1435,26 @@ section {
 .headprojects{
     font-size: 3.5rem;
     font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
     margin-bottom: 1rem;
     text-align: center;
     color: #00aeff;
     animation: colorswipe 1s ease-in-out infinite;
 }
-.projectstext p{
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    font-weight: 400;
+.projectstext h2{
+    font-weight: 600;
+    text-align: left;
 }
-
-
+.projectstext p{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+    text-align: left;
+}
 /* projects section ends */
 /* reviews section begins */
 .reviews{
