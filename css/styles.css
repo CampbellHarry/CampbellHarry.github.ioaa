@@ -1302,7 +1302,6 @@ section {
     padding: 0 1rem;
     flex-wrap: wrap;
     flex-wrap: inherit;
-    text-transform: lowercase !important;
 }
 .contactimg{
     width: 50%;
