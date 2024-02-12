@@ -76,19 +76,7 @@ function showCertifications(certifications) {
 }
 // end of certifications section json
 // shows the projects on the page
-function showProjects(projects) {
-    let projectscontainer = document.getElementsByClassName("projectscontainer")[0];
-    let ProjectsHTML = "";
-    projects.forEach(project => {
-        ProjectsHTML += `
-        <div class="projectstext">
-        <a href="${project.projectlink}" target="_blank"><h2>${project.projectname}</h2></a>
-        <h3>${project.projectcompany}</h3>
-        <p>${project.projectdiscription}</p>
-</div>`;
-    });
-    projectscontainer.innerHTML = ProjectsHTML;
-}
+
 // end of projects section json
 // shows the reviews on the page
 function showReviews(reviews) {
@@ -106,20 +94,7 @@ function showReviews(reviews) {
     reviewscontainer.innerHTML = ReviewsHTML;
 }
 // end of reviews section json
-function showblogs(blog) {
-    let bloghalf = document.getElementsByClassName("bloghalf")[0];
-    let BlogsHTML = "";
-    blog.forEach(blogs => {
-        BlogsHTML += `
-        <div class="blog">
-            <div class="blogtext">
-                <h2>${blogs.blogname}</h2>
-                <p>${blogs.blogtext.substring(0, 40)}...</p>
-            </div>
-        </div>`;
-    });
-    bloghalf.innerHTML = BlogsHTML;
-}
+
 
 // loads all of the json files onto the page
 document.addEventListener('DOMContentLoaded', async function () {
@@ -127,10 +102,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     showSkills(skills);
     const certifications = await fetchData("/backend/json/certs.json");
     showCertifications(certifications);
-    const projects = await fetchData("/backend/json/projects.json");
+    const reviews = await fetchData("/backend/json/reviews.json");
     showReviews(reviews);
-    const blog = await fetchData("/backend/json/blog.json");
-    showblogs(blog);
 });
 
 
