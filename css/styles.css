@@ -8,7 +8,6 @@
   text-decoration: none;
   outline: none;
   border: none;
-  text-transform: capitalize;
   transition: all 0.2s linear;
 }
 html {
@@ -1232,7 +1231,6 @@ section {
     background-color: var(--primary);
     flex-wrap: wrap;
     flex-wrap: inherit;
-    text-transform: lowercase !important;
 }
 .contactcontainer{
     display: flex;
@@ -1245,7 +1243,6 @@ section {
     flex-wrap: inherit;
     align-items: center;
     justify-content: center;
-    text-transform: lowercase !important;
 }
 
 .contacttext{
@@ -1777,7 +1774,6 @@ hr{
 }
 .active{
     color: var(--techblue) !important;
-    text-transform: capitalize !important;
 }
 .blueishtag{
     background-color: #00aeff4b;
