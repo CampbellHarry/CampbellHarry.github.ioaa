@@ -215,21 +215,12 @@ window.addEventListener('scroll', bottombarappear);
 
 window.addEventListener('scroll', headerchange);
 
+var prevScrollPos = window.pageYOffset || document.documentElement.scrollTop;
+
 function headerchange() {
-    if (window.matchMedia("(max-width: 680px)").matches) {
-        return; // Don't execute the code if screen width is under 680px
-    }
-    var scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-    if (scrollPercentage >= 10) {
-        document.getElementById("header").style.animation = "up 1.2s relitive both";
-        document.getElementById("header").style.transition = "transform 0.5s ease-in-out";
-        document.getElementById("header").style.backgroundColor = "rgba(255, 255, 255, 0.4)";
-        document.getElementById("header").style.transform = "translateY(-10%)";
-        var headerLinks = document.getElementsByClassName("headera");
-        for (var i = 0; i < headerLinks.length; i++) {
-            headerLinks[i].style.color = "white";
-        }
-    } else {
+    var currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    if (currentScrollPos < prevScrollPos) {
+        // User is scrolling up
         document.getElementById("header").style.display = "block";
         document.getElementById("header").style.opacity = "1";
         document.getElementById("header").style.transform = "translateY(0%)";
@@ -238,10 +229,37 @@ function headerchange() {
         for (var i = 0; i < headerLinks.length; i++) {
             headerLinks[i].style.color = "black";
         }
+    } else {
+        // User is scrolling down
+        if (window.matchMedia("(max-width: 680px)").matches) {
+            return; // Don't execute the code if screen width is under 680px
+        }
+        var scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        if (scrollPercentage >= 10) {
+            document.getElementById("header").style.animation = "up 1.2s relitive both";
+            document.getElementById("header").style.transition = "transform 0.5s ease-in-out";
+            document.getElementById("header").style.backgroundColor = "rgba(255, 255, 255, 0.4)";
+            document.getElementById("header").style.transform = "translateY(-10%)";
+            var headerLinks = document.getElementsByClassName("headera");
+            for (var i = 0; i < headerLinks.length; i++) {
+                headerLinks[i].style.color = "white";
+            }
+        } else {
+            document.getElementById("header").style.display = "block";
+            document.getElementById("header").style.opacity = "1";
+            document.getElementById("header").style.transform = "translateY(0%)";
+            document.getElementById("header").style.backgroundColor = "rgba(255, 255, 255, 1)";
+            var headerLinks = document.getElementsByClassName("headera");
+            for (var i = 0; i < headerLinks.length; i++) {
+                headerLinks[i].style.color = "black";
+            }
+        }
     }
+    prevScrollPos = currentScrollPos;
 }
 
 window.addEventListener('scroll', headerchange);
+
 
 // header scroll animation
 function handleScroll() {
