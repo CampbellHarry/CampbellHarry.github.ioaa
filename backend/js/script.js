@@ -233,51 +233,6 @@ function headerchange() {
 
 window.addEventListener('scroll', headerchange);
 
-
-// header scroll animation
-function handleScroll() {
-    const containerClasses = [
-        'aboutcontainer',
-        'experiencecontainer',
-        'projectscontainer',
-        'certificationscontainer',
-        'reviewscontainer',
-        'contactcontainer',
-        'headcontact'
-    ];
-
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-
-    function isMobile() {
-        return window.innerWidth <= 680;
-    }
-
-    containerClasses.forEach(containerClass => {
-        const elements = document.getElementsByClassName(containerClass);
-
-        Array.from(elements).forEach(element => {
-            if (isMobile() || isElementInViewport(element)) {
-                element.classList.add('visible');
-                element.classList.remove('hidden');
-            } else {
-                element.classList.remove('hidden');
-                element.classList.add('hidden');
-            }
-        });
-    });
-}
-
-window.addEventListener('scroll', handleScroll);
-window.addEventListener('DOMContentLoaded', handleScroll); // Check on initial load
-window.addEventListener('resize', handleScroll); // Handle resize events
 // section that the person is on
 // header scroll animation ends
 /* // scroller

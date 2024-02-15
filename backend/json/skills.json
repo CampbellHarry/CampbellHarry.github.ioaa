@@ -40,6 +40,11 @@
         "icon": "https://img.icons8.com/material/100/ffffff/idea.png"
     },
     {
+        "name": "GASP",
+        "bar": "100%",
+        "icon": "https://img.icons8.com/ios/100/ffffff/animation-rig.png"
+    },
+    {
         "name": "Project Management",
         "bar": "94%",
         "icon": "https://img.icons8.com/material/100/ffffff/project-management.png"

@@ -10,6 +10,7 @@
 .container {
   margin-top: 15rem;
   margin-bottom: 20px;
+  z-index: -1111;
 }
 .typesecuresync{
   font-size: 5.5rem !important; 
@@ -17,6 +18,10 @@
   color: white;
 margin-bottom: 1rem;
   text-align: left;
+}
+.goldglow{
+    color: #FFD700;
+    box-shadow: 0 0 1000px 50px #FFD700;
 }
 .typer2{
   font-size: 1.5rem !important; 
@@ -30,9 +35,48 @@ margin-bottom: 1rem;
     flex-direction: row;
     justify-content: center;
     gap: 1rem;
+    background-color: transparent;
+    background-image: repeating-radial-gradient(circle at 0 0,#bac6c945 0,#bac6c945 2%,transparent 4%,transparent 100%);
+    background-size: 45px 45px;
+    padding: 2rem;
+    background-position: 0 0;
+    margin-bottom: 25rem;
+}
+.statistics{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    margin-top: 5rem;
+}
+.statistic{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: #00c6e0 solid 2px;
+    box-shadow: #00c6e0 0px 0px 20px;
+}
+.statistic:hover{
+    transform: scale(1.05);
+}
+.statistic h2{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+}
+.statistic p{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
 }
 body{
-    background: linear-gradient(to bottom, #1F3A93, #3A67CC);
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 0 0/var(--tw-bg-opacity));
 }
 .leftside{
     display: flex;
@@ -47,7 +91,6 @@ body{
     justify-content: center;
     align-items: flex-start;
     width: 60%;
-
 }
 .rightside{
     display: flex;
@@ -75,7 +118,7 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    width: 100%;
+    padding: 10rem;
 }
 .rightside img{
     width: 100%;
