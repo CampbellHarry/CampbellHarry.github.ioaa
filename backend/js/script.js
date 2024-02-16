@@ -142,7 +142,7 @@ window.addEventListener('scroll', function () {
 
 // typing animation script
 var typed = new Typed(".typing-text", {
-    strings: ["a Full Stack Developer", "Skilled in Cyber Security", "a Web Developer", "a IT Student", "a skillfull IT Support engineer"],
+    strings: ["a Full Stack Developer", "Skilled in Cyber Security", "a Web Developer", "a IT Student", "a skillfull IT support engineer"],
     loop: true,
     typeSpeed: 70,
     backSpeed: 25,
