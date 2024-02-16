@@ -1347,13 +1347,19 @@ section {
     padding: 0 1rem;
     color: var(--white);
     background-color: transparent;
-    background-image: repeating-radial-gradient(circle at 0 0,#bac6c945 0,#bac6c945 2%,transparent 4%,transparent 100%);
-    background-size: 45px 45px;
+    background-image: repeating-radial-gradient(circle at 0 0,#bac6c945 0,#bac6c945 2%,transparent 4%,transparent 100%, #ffff 0%, #ffff 2%,transparent 4%,transparent 100%);
+
     background-position: 0 0;
     mask-image: radial-gradient(circle at center,#fff 10%,transparent 70%);
     -webkit-mask-image: radial-gradient(circle at center,#fff 10%,transparent 140%);
     flex-wrap: wrap;
     flex-wrap: inherit;
+}
+b{
+    color: #00aeff;
+    font-weight: 900;
+    text-decoration: underline 2px solid #00aeff;
+    text-underline-offset: 0.3rem;
 }
 .contactcontainer{
     display: flex;
