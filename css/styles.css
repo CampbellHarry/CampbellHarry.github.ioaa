@@ -15,8 +15,6 @@ html {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
-
-@media (prefers-color-scheme: dark) {
     html {
         background: var(--darkmode);
         color: #fff;
@@ -89,53 +87,6 @@ html {
         background-color: var(--black) !important;
         color: var(--blue) !important;
     }
-}
-@media (prefers-color-scheme: light) {
-    html {
-        background: var(--lightmode);
-        color: #333;
-    }
-    :root{
-        --primary: #333;
-        --darkmode: #fff;
-        --secondary: #fff;
-        --tertiary: #eee;
-        --quaternary: #ccc;
-        --quinary: #aaa;
-        --senary: #888;
-        --septenary: #666;
-        --octonary: #444;
-        --nonary: #222;
-        --denary: #000;
-        --black: #000;
-        --white: #fff;
-        --gray: #333;
-        --red: #f00;
-        --green: #0f0;
-        --blue: #00f;
-        --yellow: #ff0;
-        --cyan: #0ff;
-        --magenta: #f0f;
-        --techblue: #00aeff;
-        --transparent: transparent;
-        --current: currentColor;
-        --inherit: inherit;
-        --initial: initial;
-        --unset: unset;
-    }
-    html *::selection {
-        background: #333;
-        color: #fff;
-    }
-
-    html::-webkit-scrollbar-track {
-        background: #ccc;
-    }
-
-    html::-webkit-scrollbar-thumb {
-        background: #aaa;
-    }
-}
 body {
     --tw-bg-opacity: 1;
     background-color: rgb(0 0 0/var(--tw-bg-opacity));
