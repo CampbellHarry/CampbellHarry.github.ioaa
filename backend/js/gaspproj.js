@@ -107,8 +107,8 @@ gsap.to("#cloud", {
     duration: 2,
     scrollTrigger: {
         trigger: "#cloud",
-        start: "top 60%",
-        end: "bottom 60%",
+        start: "top 70%",
+        end: "bottom 70%",
         scrub: true,
     },
 });
@@ -119,8 +119,8 @@ gsap.to("#cloud h2", {
     duration: 2,
     scrollTrigger: {
         trigger: "#cloud h2",
-        start: "top 60%",
-        end: "bottom 60%",
+        start: "top 70%",
+        end: "bottom 70%",
         scrub: true,
     },
 });
@@ -131,8 +131,8 @@ gsap.to("#security", {
     duration: 2,
     scrollTrigger: {
         trigger: "#security",
-        start: "top 60%",
-        end: "bottom 60%",
+        start: "top 70%",
+        end: "bottom 70%",
         scrub: true,
     },
 });
@@ -143,8 +143,8 @@ gsap.to("#security h2", {
     duration: 2,
     scrollTrigger: {
         trigger: "#security",
-        start: "top 60%",
-        end: "bottom 60%",
+        start: "top 70%",
+        end: "bottom 70%",
         scrub: true,
     },
 });
@@ -155,8 +155,8 @@ gsap.to("#account", {
     duration: 2,
     scrollTrigger: {
         trigger: "#account",
-        start: "top 60%",
-        end: "bottom 60%",
+        start: "top 70%",
+        end: "bottom 70%",
         scrub: true,
     },
 });
@@ -167,8 +167,8 @@ gsap.to("#account h2", {
     duration: 2,
     scrollTrigger: {
         trigger: "#account",
-        start: "top 60%",
-        end: "bottom 60%",
+        start: "top 70%",
+        end: "bottom 70%",
         scrub: true,
     },
 });
@@ -179,8 +179,8 @@ gsap.to("#moderation", {
     duration: 2,
     scrollTrigger: {
         trigger: "#moderation",
-        start: "top 60%",
-        end: "bottom 60%",
+        start: "top 70%",
+        end: "bottom 70%",
         scrub: true,
     },
 });
@@ -191,8 +191,8 @@ gsap.to("#moderation h2", {
     duration: 2,
     scrollTrigger: {
         trigger: "#moderation",
-        start: "top 60%",
-        end: "bottom 60%",
+        start: "top 70%",
+        end: "bottom 70%",
         scrub: true,
     },
 });
@@ -203,8 +203,8 @@ gsap.to("#ui", {
     duration: 2,
     scrollTrigger: {
         trigger: "#ui",
-        start: "top 60%",
-        end: "bottom 60%",
+        start: "top 70%",
+        end: "bottom 70%",
         scrub: true,
     },
 });
@@ -215,8 +215,8 @@ gsap.to("#ui h2", {
     duration: 2,
     scrollTrigger: {
         trigger: "#ui",
-        start: "top 60%",
-        end: "bottom 60%",
+        start: "top 70%",
+        end: "bottom 70%",
         scrub: true,
     },
 });
