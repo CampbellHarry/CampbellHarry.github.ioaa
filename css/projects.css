@@ -143,11 +143,11 @@ body{
     flex-wrap: wrap;
 }
 .containera .gallary img {
-    width: 50rem;
+    width: 100%;
     box-shadow: black 0px 0px 20px;
 }
 .gallary img{
-    width: 50rem;
+    width: 100%;
     margin: 1rem;
     height: auto;
     border-radius: 2rem;
