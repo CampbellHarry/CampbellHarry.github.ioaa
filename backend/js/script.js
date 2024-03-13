@@ -116,6 +116,15 @@ document.addEventListener('visibilitychange', function () {
     }
 });
 
+if (screen.width > 640) {
+    const gasp = document.getElementById("gasp");
+    gasp.src = " ";
+}
+else {
+    const gasp = document.getElementById("gasp");
+    gasp.src = "/backend/js/gasp.js";
+}
+
 
 function updateTitle(newTitle, faviconPath) {
     // Fade out effect

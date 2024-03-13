@@ -14,3 +14,12 @@ var typed = new Typed(".typer2", {
     backDelay: 500,
     showCursor: false
 });
+
+if (screen.width > 640) {
+    const gasp = document.getElementById("gasp");
+    gasp.src = " ";
+}
+else {
+    const gasp = document.getElementById("gasp");
+    gasp.src = "/backend/js/gasp.js";
+}
