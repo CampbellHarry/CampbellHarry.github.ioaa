@@ -1969,6 +1969,7 @@ hr{
         justify-content: center;
         align-items: center;
         width: auto;
+        max-width: 90% !important;
     }
     .blueishtag h1{
         text-align: center;

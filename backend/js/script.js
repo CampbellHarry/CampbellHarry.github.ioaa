@@ -116,9 +116,9 @@ document.addEventListener('visibilitychange', function () {
     }
 });
 
-if (screen.width > 640) {
+if (screen.width > "640px" || window.innerWidth > "640px") {
     const gasp = document.getElementById("gasp");
-    gasp.src = " ";
+    gasp.src = "";
 }
 else {
     const gasp = document.getElementById("gasp");
