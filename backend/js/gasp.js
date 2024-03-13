@@ -305,7 +305,7 @@ gsap.to(".reviewscontainer", {
     scrollTrigger: {
         trigger: ".reviewscontainer",
         start: "top 100%",
-        end: "bottom 20%",
+        end: "bottom 60%",
         scrub: true,
     },
 });

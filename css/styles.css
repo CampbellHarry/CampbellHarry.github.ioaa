@@ -1558,7 +1558,7 @@ b{
     color: var(--white);
     gap: 5rem;
     flex-wrap: wrap;
-    flex-wrap: inherit;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     text-align: left;

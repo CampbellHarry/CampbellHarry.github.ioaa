@@ -139,11 +139,12 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
     margin-top: 1rem;
     flex-wrap: wrap;
 }
 .containera .gallary img {
-    width: 100%;
+    width: 40%;
     box-shadow: black 0px 0px 20px;
 }
 .gallary img{
@@ -155,9 +156,9 @@ body{
 }
 @media screen and (max-width: 850px){
     .containera .gallary img {
-        width: 100%;
+        width: 50rem !important;
+        margin: 0;
     }
-    
 }
 @keyframes morphimage{
     0%{
