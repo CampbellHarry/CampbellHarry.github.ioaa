@@ -204,7 +204,7 @@ header{
         letter-spacing: 2px;
         color: var(--secondary);
     }
-    .logo img{
+    .logo svg{
         width: 8vh;
         height: 8vh;
     }
@@ -1618,14 +1618,6 @@ date{
 .reviewstext p{
     font-size: 2rem;
     font-weight: 400;
-}
-.heropic{
-    height: 40rem;
-    width: 40rem;
-}
-.heropic img{
-    height: 40rem;
-    width: 40rem;
 }
 
 @media screen and (max-width: 990px) {

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thor Report.</title>
+    <link rel="icon" href="/img/thor.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/thorislost.css">
+</head>
+<body>
+<div class="overlay">
+    <div class="modal">
+        <div class="modalheader">
+            <h1>Thor is lost!</h1>
+        </div>
+        <div class="modalbody">
+            <h1 id="locationsent">Please allow for your location to be sent!</h1>
+            <p>Thor has been reported as lost. Please contact the owner if you have any information about Thor's whereabouts.</p>
+        </div>
+        <div class="modalfooter">
+            <div class="contactinfo">
+                <p>Phone: 123-456-7890</p>
+                <p>Email:</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="container">
+        <div class="innercontainer">
+            <div class="innercontainertop">
+                <div id="profilepic" class="photoimg notmissingthor">
+                    <img src="/img/thor.png" alt="Thor">
+                </div>
+                <div class="textholder">
+                    <div class="title">
+                        <h1 class="thorname">Hey, I'm Thor</h1>
+                    </div>
+                    <div class="text">
+                        <div id="missinginfo" class="alerttext notmissingthor">
+                            <p id="missinginfo">I am <span>not lost</span></p>
+                        </div>
+                    </div>
+                    <div class="tags">
+                        <div class="tag">
+                            <p>Small</p>
+                        </div>
+                        <div class="tag">
+                            <p>Male</p>
+                        </div>
+                        <div class="tag">
+                            <p>Chi Staffy Bull</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="innercontainerbottom">
+                <div class="smalltextholder">
+                    <p id="reportedtext">Please use the button below to notify my owner if I approach you while they are not around.</p>
+                </div>
+                <div class="buttonholder">
+                    <a class="button" onclick="thorlostprotocol()">Report Thor as lost</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let streetName; // Declare streetName in the global scope
+    
+    function setThorAsLost() {
+        const expirationDate = new Date();
+        expirationDate.setTime(expirationDate.getTime() + (12 * 60 * 60 * 1000)); // 12 hours in milliseconds
+        document.cookie = "isThorLost=true; expires=" + expirationDate.toUTCString() + "; path=/";
+        console.log("Cookie 'isThorLost' set successfully.");
+    }
+    
+    function clearThorLostStatus() {
+        document.cookie = "isThorLost=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+    }
+    
+    window.onload = function() {
+        checkThorStatus();
+    };
+    
+    function checkThorStatus() {
+        const cookies = document.cookie.split(';');
+        const isThorLost = cookies.some(cookie => cookie.trim().startsWith('isThorLost=true'));
+        if (isThorLost) {
+            thorlostprotocol(); // Call thorlostprotocol without passing streetName
+        }
+    }
+    
+    function thorlostprotocol() {
+        const profilepic = document.getElementById('profilepic');
+        const missingtext = document.getElementById('missingtext');
+        const missinginfo = document.getElementById('missinginfo');
+        const button = document.querySelector('.button');
+    
+        // Use streetName directly here
+        button.innerHTML = `Update location`;
+        missinginfo.innerHTML = `I am lost`;
+        profilepic.classList.add('missingthor');
+        missinginfo.classList.add('missingthor');
+        profilepic.classList.remove('notmissingthor');
+        missinginfo.classList.remove('notmissingthor');
+        setThorAsLostAndStartTimer();
+        getpermsforlocation();
+        // Do not call getpermsforlocation();
+    
+        // Add console log to check if thorlostprotocol is called and streetName value
+        console.log("thorlostprotocol called. streetName:", streetName);
+    }
+    
+    function getpermsforlocation() {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            googleMapsLink = `https://www.google.com/maps?q=${latitude},${longitude}`;
+    
+            fetch(
+                `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=18&addressdetails=1`
+            )
+            .then((response) => response.json())
+            .then((data) => {
+                streetName = data.address.road; // Assign streetName here
+                console.log('Street name:', streetName);
+                if (streetName) {
+                    // Create a new cookie with the streetName
+                    const expirationDate = new Date();
+                    expirationDate.setTime(expirationDate.getTime() + (12 * 60 * 60 * 1000)); // 12 hours in milliseconds
+                    document.cookie = "streetName=" + encodeURIComponent(streetName) + "; expires=" + expirationDate.toUTCString() + "; path=/";
+                    
+                    // Use the streetName to display and send messages
+                    const reportedtext = document.getElementById('reportedtext');
+                    const message = `Thor has been reported as lost near ${streetName}. Google Maps link: ${googleMapsLink}`;
+                    reportedtext.innerHTML = `Thor has been reported as lost at ${streetName}`;
+                    deploytodiscord(message);
+                } else {
+                    console.error('Street name not found in response:', data);
+                }
+            })
+            .catch((error) => console.error('Error fetching street name:', error))
+            .finally(() => {
+                document.getElementById('locationsent').innerHTML = 'Thanks for sending your location!';
+            });
+        });
+    }
+    
+    function deploytodiscord(message) {
+        const discordWebhook = 'https://discord.com/api/webhooks/1229174908492316775/Q7fM79hHMmB21mJrRHWD_phN7xdCVBp4lgT9JeqC1u-1of1ddw00E0NyQm_KZtWTuUGN';
+        fetch(discordWebhook, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ content: message }),
+        })
+        .then((response) => {
+            console.log('Response status:', response.status);
+            if (response.status === 204) {
+                return;
+            }
+            return response.json();
+        })
+        .then((data) => {
+            if (data) {
+                console.log('Success:', data);
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    }
+    
+    function setThorAsLostAndStartTimer() {
+        setThorAsLost();
+        setTimeout(clearThorLostStatus, 12 * 60 * 60 * 1000); // 12 hours in milliseconds
+    }
+    </script>
+</html>
