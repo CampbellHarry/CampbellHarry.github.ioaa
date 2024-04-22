@@ -15,11 +15,11 @@ main{
     gap: 2rem;
     margin-top: 13rem;
     background-color: #111!important;
-    color: #fff;
 }
 section{
     gap: 5rem !important;
     display: flex;
+    color: #fff;
     flex-direction: column;
 }
 .team{
