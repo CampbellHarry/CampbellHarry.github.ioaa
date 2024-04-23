@@ -2742,6 +2742,11 @@ a{
     margin-bottom: 2rem;
     flex-wrap: wrap;
 }
+@media screen and (max-width: 453px) {
+    .tagpart{
+        flex-direction: column !important;
+    }
+}
 .arrowpart{
     display: flex;
     justify-content: right;
@@ -2895,10 +2900,17 @@ a{
 }
 .reviewholder{
     display: flex;
-    flex-wrap: wrap;
     gap: 2rem;
     margin-top: 2rem;
     align-items: center;
+}
+@media screen and (max-width: 1110px) {
+    .reviewholder{
+        flex-direction: column;
+    }
+    .reviewcard{
+        width: 100% !important;
+    }   
 }
 .reviewcard{
     display: flex;

@@ -51,7 +51,7 @@ window.addEventListener('scroll', function () {
 // typing animation script
 if(document.querySelector(".typing-text")){
     var typed = new Typed(".typing-text", {
-        strings: ["Full stack development.", "Cyber security.", "Web Development.", "IT Support.", "Planning."],
+        strings: ["Full stack development.", "Cyber security.", "Web Development.", "Planning."],
         loop: true,
         typeSpeed: 70,
         backSpeed: 25,
