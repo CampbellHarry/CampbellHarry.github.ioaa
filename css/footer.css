@@ -12,9 +12,12 @@ footer {
         background-color: var(--tursh);
         border-top: #000000 5px solid;
         width: 500%;
+        color: black;
         font-size: 16px;
 }
-
+.footer-section h2{
+        color: black !important;
+}
 .contactbtnfooter{
         background-color: #000000;
         color: white;
@@ -54,6 +57,8 @@ footer {
 
 .footer-section h3 {
         font-size: 1.5rem;
+        font-weight: 600;
+        color: black !important;
         margin-bottom: 20px;
 }
 

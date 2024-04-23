@@ -19,7 +19,6 @@ main{
 section{
     gap: 5rem !important;
     display: flex;
-    color: #fff;
     flex-direction: column;
 }
 .team{
