@@ -146,32 +146,6 @@
         });
     }
     
-    function deploytodiscord(message) {
-        const discordWebhook = 'https://discord.com/api/webhooks/1229174908492316775/Q7fM79hHMmB21mJrRHWD_phN7xdCVBp4lgT9JeqC1u-1of1ddw00E0NyQm_KZtWTuUGN';
-        fetch(discordWebhook, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ content: message }),
-        })
-        .then((response) => {
-            console.log('Response status:', response.status);
-            if (response.status === 204) {
-                return;
-            }
-            return response.json();
-        })
-        .then((data) => {
-            if (data) {
-                console.log('Success:', data);
-            }
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-    }
-    
     function setThorAsLostAndStartTimer() {
         setThorAsLost();
         setTimeout(clearThorLostStatus, 12 * 60 * 60 * 1000); // 12 hours in milliseconds
