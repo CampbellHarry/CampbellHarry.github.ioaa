@@ -362,7 +362,6 @@ a{
     max-width: 1200px;
     margin-top: 100rem;
     font-size: 2.5rem;
-    margin: 0 auto;
     padding: 0 1rem;
     color: var(--white);
     margin-top: 20rem !important;
@@ -457,7 +456,7 @@ a{
     width: 80%;
 }
 .projectstatsmall h2{
-    font-size: 3remrem !important;
+    font-size: 3rem !important;
     font-weight: 600;
     color: #00c6e0;
 }
@@ -672,7 +671,6 @@ a{
     width: 100%;
     flex-wrap: wrap;
     overflow: hidden;
-    flex-wrap: inherit;
 }
 .scroll{
     display: flex;
@@ -1131,7 +1129,6 @@ a{
     align-items: center;
     justify-content: center;
     max-width: auto;
-    margin: 0 auto;
     padding: 0 1rem;
     color: var(--white);
     flex-wrap: wrap;
@@ -1144,7 +1141,6 @@ a{
     align-items: center;
     justify-content: center;
     max-width: auto;
-    margin: 0 auto;
     padding: 0 1rem;
     color: var(--white);
     flex-wrap: wrap;
@@ -1330,10 +1326,8 @@ b{
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    background-image: -webkit-linear-gradient(to right, #6ED2D6, #81BAD2);
     background-image: linear-gradient(to right, #15e5ec, #a1d2fd);
     align-items: center;
-    text-align: center;
     animation: colorswipe 1s ease-in-out infinite;
 }
 .headcontact{
@@ -1371,7 +1365,6 @@ b{
     width: 100%;
 }
 .contactbtn{
-    display: inline-block;
     font-size: 1.6rem;
     font-weight: 600;
     color: var(--white);
